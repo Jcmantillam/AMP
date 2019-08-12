@@ -1,0 +1,69 @@
+<!doctype html>
+<html ⚡4email>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+ 
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    h1 {
+    	font-family: arial;
+      	margin: 10px;
+    }
+    .center {
+		text-align: center;
+    }
+    .carousel-preview {
+      margin-top: 10px;
+    } 
+  </style>
+</head>
+<body>
+  	
+	<amp-state id="myState">
+		<script type="application/json">
+		  {"cats": 
+			 [
+			   {
+				"name": "Carulla",
+				"description": "Aquí se verían info de Carulla"
+			  },
+			  {
+				"name": "Rappi",
+				"description": "Ver promos"
+			  },
+			  {
+				"name": "Despegar",
+				"description": "Promos despegar"
+			  },
+			  {
+				"name": "Colpatria",
+				"description": "Info del banco"
+			  }
+			]
+		  }
+		</script>
+	</amp-state>
+  </amp-state>
+  <#include "cms://contentlibrary/list_master/header/responsive dc/header-no-responsive.htm">
+  <amp-carousel id="carousel-with-preview"
+    width="800"
+    height="400"
+    layout="responsive"
+    type="slides"
+    on="slideChange:AMP.setState({currentCat: event.index})">
+  <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Corte%20CARULLA/Imagen-principal.png"  alt="photo courtesy of Unsplash"></amp-img>
+  <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Corte%20Rappi/Rappi%20principal.PNG"  alt="photo courtesy of Unsplash"></amp-img>
+  <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Corte%20Despegar/Despegar_1.png"  alt="photo courtesy of Unsplash"></amp-img>
+  <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Migraci%C3%B3n%20clientes%20comunes%20Scotiabank%20Colpatria/Imagen-principal.png"  alt="photo courtesy of Unsplash"></amp-img>
+ </amp-carousel>
+  <div class="center">
+    <h1>
+      <span [text]="myState.cats[currentCat].name"></span>
+    </h1>
+  </div>
+  <p class="center">About <span [text]="myState.cats[currentCat].name"> Carulla</span></p>
+  <p class="center" [text]="myState.cats[currentCat].description">Aquí se verían info de Carulla</p>
+</body>
