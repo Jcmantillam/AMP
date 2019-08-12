@@ -24,7 +24,7 @@
   	
 	<amp-state id="myState">
     <script type="application/json">
-      {"cats": 
+      {"lista": 
          [
            {
             "name": "Carulla",
@@ -46,14 +46,13 @@
       }
     </script>
   </amp-state>
-  </amp-state>
   <#include "cms://contentlibrary/list_master/header/responsive dc/header-no-responsive.htm">
   <amp-carousel id="carousel-with-preview"
     width="800"
     height="400"
     layout="responsive"
     type="slides"
-    on="slideChange:AMP.setState({currentCat: event.index})">
+    on="slideChange:AMP.setState({currentItem: event.index})">
   <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Corte%20CARULLA/Imagen-principal.png"  alt="photo courtesy of Unsplash"></amp-img>
   <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Corte%20Rappi/Rappi%20principal.PNG"  alt="photo courtesy of Unsplash"></amp-img>
   <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Corte%20Despegar/Despegar_1.png"  alt="photo courtesy of Unsplash"></amp-img>
@@ -61,9 +60,10 @@
  </amp-carousel>
   <div class="center">
     <h1>
-      <span [text]="myState.cats[currentCat].name"></span>
+      <span [text]="myState.lista[currentItem].name"></span>
     </h1>
   </div>
-  <p class="center">About <span [text]="myState.cats[currentCat].name"> Carulla</span></p>
-  <p class="center" [text]="myState.cats[currentCat].description">Aquí se verían info de Carulla</p>
-</body>
+  <p class="center">About <span [text]="myState.lista[currentItem].name"> Carulla</span></p>
+  <p class="center" [text]="myState.lista[currentItem].description">Aquí se verían info de Carulla</p>
+	<#include "cms://contentlibrary/list_master/footer/responsive_dc/v2_iconos/footer.htm">
+ </body>

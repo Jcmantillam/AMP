@@ -6,6 +6,7 @@
 		<style amp4email-boilerplate>body{visibility:hidden}</style>
 		<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 		<script custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js" async></script>
+      <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 		<style amp-custom>
 			p.a {
 			  font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -17,16 +18,16 @@
 			  text-align:justify;
 			  font-size:12px;
 			}
-			p.c {
+			a.title {
 			  font-family: Verdana, Arial, Helvetica, sans-serif;
-			  text-align:justify;
+			  text-align:centred;
 			  font-size:15px;
 			  color:red;
 			}
           a.center {
 			  font-family: Verdana, Arial, Helvetica, sans-serif;
 			  text-align:justify;
-			  font-size:15px;
+			  font-size:13px;
 			  color:#5d5d5d;
 			}
           td.a{
@@ -36,26 +37,7 @@
 		</style>
 	</head>
 	<body>
-		<amp-state id="myState">
-			<script type="application/json">
-			  {"cats": 
-				 [
-				  {
-					"name": "Sin cobros extra",
-					"description": "Paga intereses únicamente por el cupo utilizado."
-				  },
-				  {
-					"name": "Realiza pagos",
-					"description": "Realiza abonos a capital sin penalidades."
-				  },
-				  {
-					"name": "Sin costos",
-					"description": "Cero Costos en tu cuenta de ahorros y tarjeta débito."
-				  }
-				]
-			  }
-			</script>
-		</amp-state>
+		
 		<amp-state id="otherState">
 			<script type="application/json">
 			  {"list": 
@@ -103,13 +85,13 @@
 								</td>
 							</tr>
 							<tr height="20"></tr>
-							<tr>
+                          	<tr>
 								<td align="center">
-									<amp-carousel id="carousel"
+									<amp-carousel id="carousel-with-preview"
 											width="400"
 											height="200"
 											type="slides"
-											on="slideChange:AMP.setState({currentCat: document.getElementById("myState").event.index})">
+											on="slideChange:AMP.setState({currentElement: event.index})">
 										 
 										 <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%205.png"  alt="photo courtesy of Unsplash"></amp-img>
 										 <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%204.png"  alt="photo courtesy of Unsplash"></amp-img>
@@ -117,10 +99,31 @@
 									</amp-carousel>
 									<div class="center">
 										<h1>
-										  <span [text]="myState.cat[currentCat].name">Sin cobros extra</span>
+										  <span [text]="otherState.list[currentElement].name">Sin cobros extra</span>
 										</h1>
-										<a class="center" [text]="myState.cat[currentCat].description">Paga intereses únicamente por el cupo utilizado.</a>
+										<a class="center" [text]="otherState.list[currentElement].description">Paga intereses únicamente por el cupo utilizado.</a>
 									</div>
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+									<amp-carousel id="carousel"
+											width="300"
+											height="450"
+											>
+										 <div class="slide">
+											<amp-img width="300" height="250" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%206.png"  alt="photo courtesy of Unsplash"></amp-img>
+											<amp-fit-text layout="responsive" width="300" height="200">Sin cobros extra<br>Paga intereses únicamente por el cupo utilizado.</amp-fit-text>
+										 </div>
+										 <div class="slide">
+											<amp-img width="290" height="250" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%207.png"  alt="photo courtesy of Unsplash"  alt="photo courtesy of Unsplash"></amp-img>
+											<amp-fit-text layout="responsive" width="300" height="200"><a class="title"><h2>Realiza pagos</h2></a><br><a class="center">Realiza abonos a capital sin penalidades.</a></amp-fit-text>
+										 </div>
+										 <div class="slide">
+											<amp-img width="300" height="250" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%208.png"  alt="photo courtesy of Unsplash"  alt="photo courtesy of Unsplash"></amp-img>
+											<amp-fit-text layout="responsive" width="300" height="200">Sin costos<br>Cero Costos en tu cuenta de ahorros y tarjeta débito.</amp-fit-text>
+										 </div>
+									</amp-carousel>
 								</td>
 							</tr>
 							<tr>
@@ -140,7 +143,7 @@
 											width="400"
 											height="200"
 											type="slides"
-											on="slideChange:AMP.setState({currentElement: document.getElementById("otherState").event.index})">
+											on="slideChange:AMP.setState({currentElement: event.index})">
 										 
 										 <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%206.png"  alt="photo courtesy of Unsplash"></amp-img>
 										 <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%207.png"  alt="photo courtesy of Unsplash"></amp-img>
