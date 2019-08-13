@@ -5,7 +5,16 @@
 		<script async src="https://cdn.ampproject.org/v0.js"></script>
 		<style amp4email-boilerplate>body{visibility:hidden}</style>
 		<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-		<script custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js" async></script>
+
+		<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+		<!-- We will be using the `amp-fit-text` component to fit captions to the available space. -->
+
+		<!-- Carousel previews can be implemented with `amp-selector` component. -->
+		<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+		<!-- We sync the carousel state using the `amp-bind` component. -->
+
+		 <!-- The `amp-lightbox-gallery` component allows us to quickly create a lightbox gallery. -->
+
       <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 		<style amp-custom>
 			p.a {
@@ -28,12 +37,144 @@
 			  font-family: Verdana, Arial, Helvetica, sans-serif;
 			  text-align:justify;
 			  font-size:13px;
+              width: 300px;
 			  color:#5d5d5d;
 			}
           td.a{
           	width:1%;
             vertical-align: bottom;
           }
+		  :root {
+			--space-1: .5rem;  /* 8px */
+			--space-2: 1rem;   /* 16px */
+		  }
+		  #carousel-with-preview amp-img {
+			transition: opacity 1s ease-in-out;
+		  }
+		  .carousel-preview {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		  }
+		  .carousel-preview > * {
+			margin: var(--space-1);
+			padding: 0;
+		  }
+		  .carousel-preview [selected] {
+			opacity: 0.5;
+			outline: none;
+		  }
+		  .carousel-preview .amp-carousel-slide {
+			margin: var(--space-1);
+			padding: 0;
+		  }
+		  .carousel-preview button:active {
+			opacity: 0.5;
+		  }
+		  .carousel1, .carousel2 {
+			background: var(--color-bg-light);
+			margin: var(--space-2) 0;
+		  }
+		  .carousel1 .slide > amp-img > img{
+			object-fit: contain;
+		  }
+		  .carousel2 .slide > amp-img > img{
+			object-fit: contain;
+		  }
+		  .carousel2 .caption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: var(--space-1);
+			background: rgba(0, 0, 0, 0.6);
+			font-size: 15px;
+			color: #FFFFFF;
+		  }
+	  
+		  /* define some contants */
+		  .collapsible-captions {
+			/*--caption-height: 32px
+			--image-height: 300px;*/
+			--caption-padding: 1rem;
+			--button-size: 28px;
+			--caption-color: #f5f5f5;;
+			--caption-bg-color: #FF0100;
+			background: #FF0100;
+		  }
+		  .collapsible-captions * {
+			/* disable chrome touch highlight */
+			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+			box-sizing: border-box;
+		  }
+		  /* see https://amp.dev/documentation/examples/style-layout/how_to_support_images_with_unknown_dimensions/ */
+		  .collapsible-captions .fixed-height-container {
+			background-color: #FFFFFF;
+			position: relative;
+			width: 100%;
+			height: 300px;
+		  }
+		  .collapsible-captions amp-img img {
+			object-fit: contain;
+		  }
+		  .collapsible-captions figure {
+			margin: 0;
+			padding: 0;
+		  }
+		  /* single line caption */
+		  .collapsible-captions figcaption {
+			position: absolute;
+			bottom: 0;
+			margin: 0;
+			width: 100%;
+			/* inital height is one line */
+			max-height: 32px;
+			line-height: 32px;
+			padding: 28px;
+			/* cut text after first line and show an ellipsis */
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			/* animate expansion */
+			transition: max-height 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			/* overlay the carousel icons */
+			z-index: 1000;
+			/* some styling */
+			opacity: 0.6;
+			color: #f5f5f5;
+			background: #111;
+		  }
+		  /* expanded caption */
+		  .collapsible-captions figcaption.expanded {
+			/* add padding and show all of the text */
+			padding: 28px;
+			line-height: inherit;
+			white-space: normal;
+			text-overflow: auto;
+			max-height: calc(32px + 300px);
+			/* show scrollbar in case caption is larger than image */
+			overflow: auto;
+		  }
+		  /* don't show focus highlights in chrome */
+		  .collapsible-captions figcaption:focus {
+			outline: none;
+			border: none;
+		  }
+		  /* the expand/collapse icon */
+		  .collapsible-captions figcaption span {
+			display: block;
+			position: absolute;
+			top: calc((var(--caption-height) - var(--button-size)) / 2);
+			right: 2px;
+			width: 28px;
+			height: 28px;
+			line-height: 28px;
+			text-align: center;
+			font-size: 12px;
+			color: inherit;
+			cursor: pointer;
+		  }
+		  
 		</style>
 	</head>
 	<body>
@@ -87,7 +228,7 @@
 							<tr height="20"></tr>
                           	<tr>
 								<td align="center">
-									<amp-carousel id="carousel-with-preview"
+									<amp-carousel
 											width="400"
 											height="200"
 											type="slides"
@@ -106,27 +247,6 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center">
-									<amp-carousel id="carousel"
-											width="300"
-											height="450"
-											>
-										 <div class="slide">
-											<amp-img width="300" height="250" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%206.png"  alt="photo courtesy of Unsplash"></amp-img>
-											<amp-fit-text layout="responsive" width="300" height="200">Sin cobros extra<br>Paga intereses únicamente por el cupo utilizado.</amp-fit-text>
-										 </div>
-										 <div class="slide">
-											<amp-img width="290" height="250" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%207.png"  alt="photo courtesy of Unsplash"  alt="photo courtesy of Unsplash"></amp-img>
-											<amp-fit-text layout="responsive" width="300" height="200"><a class="title"><h2>Realiza pagos</h2></a><br><a class="center">Realiza abonos a capital sin penalidades.</a></amp-fit-text>
-										 </div>
-										 <div class="slide">
-											<amp-img width="300" height="250" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%208.png"  alt="photo courtesy of Unsplash"  alt="photo courtesy of Unsplash"></amp-img>
-											<amp-fit-text layout="responsive" width="300" height="200">Sin costos<br>Cero Costos en tu cuenta de ahorros y tarjeta débito.</amp-fit-text>
-										 </div>
-									</amp-carousel>
-								</td>
-							</tr>
-							<tr>
 								<td align="left">
 									<table>
 										<tr>
@@ -139,24 +259,54 @@
 							</tr>
 							<tr>
 								<td align="center">
-									<amp-carousel id="carousel-with-preview"
-											width="400"
-											height="200"
-											type="slides"
-											on="slideChange:AMP.setState({currentElement: event.index})">
-										 
-										 <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%206.png"  alt="photo courtesy of Unsplash"></amp-img>
-										 <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%207.png"  alt="photo courtesy of Unsplash"></amp-img>
-										 <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%208.png"  alt="photo courtesy of Unsplash"></amp-img>
-									</amp-carousel>
-									<div class="center">
-										<h1>
-										  <span [text]="otherState.list[currentElement].name">Sin cobros extra</span>
-										</h1>
-										<a class="center" [text]="otherState.list[currentElement].description">Paga intereses únicamente por el cupo utilizado.</a>
-									</div>
+									<table width="300">
+										<td>
+											<amp-carousel class="collapsible-captions"
+												height="332"
+												layout="fixed-height"
+												type="slides">
+												<figure>
+													<div class="fixed-height-container">
+													  <amp-img layout="fill"
+														src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%206.png"></amp-img>
+													</div>
+													<figcaption on="tap:AMP.setState({expanded: !expanded})"
+													  tabindex="0"
+													  role="button"
+													  [class]="expanded ? 'expanded' : ''">Compras directamente en establecimiento a través de los Datafonos opción 4.
+													  <span [text]="expanded ? '&#9660;' : '&#9650;'">&#9650;</span>
+													</figcaption>
+												</figure>
+												<figure>
+													<div class="fixed-height-container">
+													  <amp-img layout="fill"
+														src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%207.png"></amp-img>
+													</div>
+													<figcaption on="tap:AMP.setState({expanded: !expanded})"
+													  tabindex="0"
+													  role="button"
+													  [class]="expanded ? 'expanded' : ''">Realiza pagosRealiza abonos a capital sin penalidades.
+													  <span [text]="expanded ? '&#9660;' : '&#9650;'">&#9650;</span>
+													</figcaption>
+												</figure>
+												<figure>
+													<div class="fixed-height-container">
+													  <amp-img layout="fill"
+														src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%208.png"></amp-img>
+													</div>
+													<figcaption on="tap:AMP.setState({expanded: !expanded})"
+													  tabindex="0"
+													  role="button"
+													  [class]="expanded ? 'expanded' : ''">Sin costos Cero Costos en tu cuenta de ahorros y tarjeta débito.
+													  <span [text]="expanded ? '&#9660;' : '&#9650;'">&#9650;</span>
+													</figcaption>
+												</figure>
+										   </amp-carousel>
+										</td>
+									</table>
 								</td>
 							</tr>
+
 						</table>
 					</td>
 				</tr>
