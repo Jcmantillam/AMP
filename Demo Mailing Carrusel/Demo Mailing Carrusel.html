@@ -6,7 +6,7 @@
 		<style amp4email-boilerplate>body{visibility:hidden}</style>
 		<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
-		<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
+		<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 		<!-- We will be using the `amp-fit-text` component to fit captions to the available space. -->
 
 		<!-- Carousel previews can be implemented with `amp-selector` component. -->
@@ -244,6 +244,7 @@
 											width="400"
 											height="200"
 											type="slides"
+											controls
 											on="slideChange:AMP.setState({currentElement: event.index})">
 										 
 										 <amp-img layout="fill" src="https://raw.githubusercontent.com/Jcmantillam/Cortes-Findasense/master/Activaci%C3%B3n%20Colocaci%C3%B3n%20cr%C3%A9ditos%20Rotativo%201/Recurso%205.png"  alt="photo courtesy of Unsplash"></amp-img>
@@ -276,6 +277,8 @@
 											<amp-carousel class="collapsible-captions"
 												height="332"
 												layout="fixed-height"
+												controls
+												autoplay
 												type="slides">
 												<figure>
 													<div class="fixed-height-container">
