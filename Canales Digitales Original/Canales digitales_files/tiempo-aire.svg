@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/tiempo-aire</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons/tiempo-aire" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(19.000000, 1.000000)">
+            <circle id="Oval-3-Copy-3" fill="#BE207A" style="mix-blend-mode: multiply;" transform="translate(8.000000, 91.000000) scale(-1, 1) translate(-8.000000, -91.000000) " cx="8" cy="91" r="8"></circle>
+            <circle id="Oval-7-Copy-3" stroke="#F5C400" stroke-width="1.78464" cx="54.5" cy="6.5" r="6.5"></circle>
+            <g id="Page-1" transform="translate(7.000000, 6.000000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                <path d="M48,69.7931034 L48,82.1328276 C48,85.36 45.2976,88 42,88 L6,88 C2.7008,88 0,85.36 0,82.1328276 L0,5.86717241 C0,2.64 2.7008,0 6,0 L42,0 C45.2976,0 48,2.64 48,5.86717241 L48,18.2068966" id="Stroke-1" stroke="#0B9CE5"></path>
+                <path d="M20,8 L28,8" id="Stroke-3" stroke="#0B9CE5"></path>
+                <path d="M27.4285714,81.7176318 C27.4285714,82.6674821 26.6622857,83.4352635 25.7142857,83.4352635 C24.7662857,83.4352635 24,82.6674821 24,81.7176318 C24,80.7677814 24.7662857,80 25.7142857,80 C26.6622857,80 27.4285714,80.7677814 27.4285714,81.7176318 Z" id="Stroke-5" stroke="#0B9CE5"></path>
+                <path d="M48,44 C43.5804444,44 40,41.3133333 40,38 C40,34.6866667 43.5804444,32 48,32 L56,32" id="Stroke-7" stroke="#01A87F"></path>
+                <path d="M48,44 C52.416,44 56,46.6866667 56,50 C56,53.3133333 52.416,56 48,56 L40,56" id="Stroke-9" stroke="#01A87F"></path>
+                <path d="M48,28 L48,32" id="Stroke-11" stroke="#01A87F"></path>
+                <path d="M48,57 L48,61" id="Stroke-13" stroke="#01A87F"></path>
+            </g>
+        </g>
+    </g>
+</svg>

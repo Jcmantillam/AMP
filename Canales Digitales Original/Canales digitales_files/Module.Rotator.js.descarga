@@ -1,0 +1,244 @@
+﻿/* Rotator Module ******************************************************************************/
+
+function RecurringTimer(callback, delay) {
+    var timerId, start, remaining = delay;
+
+    var pause = function () {
+        window.clearTimeout(timerId);
+        remaining -= new Date() - start;
+    };
+
+    var resume = function () {
+        start = new Date();
+        timerId = window.setTimeout(function () {
+            remaining = delay;
+            resume();
+            callback();
+        }, remaining);
+    };
+
+    var stop = function () {
+        window.clearTimeout(timerId);
+        remaining = delay;
+    };
+
+    var restart = function () {
+        pause();
+        remaining = delay;
+        resume();
+    };
+
+    this.Resume = resume;
+    this.Pause = pause;
+    this.Restart = restart;
+    this.Stop = stop;
+
+    //this.resume();
+}
+
+$(document).ready(function () {
+    $("section.rotator").each(function () {
+        window._bfnrotator = new Rotator("section.rotator", $("section.rotator > ul > li"), {
+            Nav$: $('section.rotator > nav > ul > li'),
+            Prev$: $('section.rotator .prev'),
+            Next$: $('section.rotator .next'),
+            Pause$: $('section.rotator .pause'),
+            Resume$: $('section.rotator .resume'),
+            autoRotate: false, //Should ALWAYS be false for the Redesign
+            eventName: "navRotated",
+            initialSlideIndex: 0,
+            wrap: true
+        });
+    });
+});
+
+var Rotator = function (element, slides$, args) {
+    var me = this;
+    this.element$ = $(element);
+    this.fullSlides$ = slides$;
+    this.desktopSlides$ = this.fullSlides$.filter(":not(.mobile)");
+    this.mobileSlides$ = this.fullSlides$.filter(":not(.desktop)");
+    this.slides$ = WindowSize.IsDesktopSize ? me.desktopSlides$ : me.mobileSlides$;
+    this.slideCount = this.slides$.length;
+    this.firstSlide$ = $(this.slides$[0]);
+    this.speed = parseInt(this.element$.data("speed"));
+    this.timer = new RecurringTimer(function () { me.IntervalHit(); }, this.speed);
+    this.slideIndex = 0;
+    this.modern = false;
+
+    var tmp = document.createElement('p').style;
+    this.modern = 'transition' in tmp || 'WebkitTransition' in tmp || 'MozTransition' in tmp || 'msTransition' in tmp || 'OTransition' in tmp;
+
+    me.options = {
+        Nav$: null,
+        Prev$: null,
+        Next$: null,
+        Pause$: null,
+        Resume$: null,
+        autoRotate: false, //Should ALWAYS be false for the Redesign
+        wrap: false,
+        eventName: 'rotated',
+        initialSlideIndex: 0,
+        animateMove: true,
+        activateSlideOverride: null
+    };
+    $.extend(me.options, args);
+
+    if (this.options.activateSlideOverride != null && typeof (this.options.activateSlideOverride) == "function")
+        this.ActivateSlide = this.options.activateSlideOverride;
+
+    if (me.options.Nav$) {
+
+        me.fullNav$ = me.options.Nav$;
+        me.desktopNav$ = me.fullNav$.filter(":not(.mobile)");
+        me.mobileNav$ = me.fullNav$.filter(":not(.desktop)");
+
+        me.options.Nav$ = WindowSize.IsDesktopSize ? me.desktopNav$ : me.mobileNav$;
+
+        $(window).on("deviceSizeChanged", function (evt$, data) {
+            me.options.Nav$ = WindowSize.IsDesktopSize ? me.desktopNav$ : me.mobileNav$;
+            me.ActivateSlide(me.slideIndex);
+        });
+
+        me.fullNav$.on("click", function (e) {
+            if (me.options.autoRotate == true || me.options.autoRotate == null) { me.timer.Restart(); }
+            e.preventDefault();
+            me.ProcessNavHit(this);
+        });
+        me.fullNav$.on("keypress", function (e) {
+            if (e.key == "Enter") {
+                if (me.options.autoRotate == true || me.options.autoRotate == null) { me.timer.Restart(); }
+                e.preventDefault();
+                me.ProcessNavHit(this);
+            }
+        });
+    }
+    if (me.options.Prev$) {
+        me.options.Prev$.on("click", function () {
+            if (me.options.wrap || me.slideIndex - 1 >= 0) me.ActivateSlide(me.slideIndex - 1);
+        });
+        //Firing twice. This and above click event.
+        //me.options.Prev$.on("keypress", function (e) {
+        //    if (e.key === "Enter") {
+        //        if (me.options.wrap || me.slideIndex - 1 >= 0) me.ActivateSlide(me.slideIndex - 1);
+        //    }
+        //});
+    }
+    if (me.options.Next$) {
+        me.options.Next$.on("click", function () {
+            if (me.options.wrap || me.slideIndex + 1 < me.slideCount) me.ActivateSlide(me.slideIndex + 1);
+        });
+        //Firing twice. This and above click event.
+        //me.options.Next$.on("keypress", function (e) {
+        //    if (e.key == "Enter") {
+        //        if (me.options.wrap || me.slideIndex + 1 < me.slideCount) me.ActivateSlide(me.slideIndex + 1);
+        //    }
+        //});
+    }
+    if (me.options.Pause$) { me.options.Pause$.on("click", function () { me.Pause(); }); }
+    if (me.options.Resume$) { me.options.Resume$.on("click", function () { me.Resume(); }); }
+    if (me.options.initialSlideIndex) { this.slideIndex = this.options.initialSlideIndex; }
+    if (me.options.autoRotate == true || me.options.autoRotate == null) {
+        this.Resume();
+    } else {
+        this.Pause();
+    }
+
+    $(window).on("deviceSizeChanged", function (evt$, data) {
+        me.slides$ = WindowSize.IsDesktopSize ? me.desktopSlides$ : me.mobileSlides$;
+        me.slideCount = me.slides$.length;
+        me.firstSlide$.css("margin-left", "0");
+        me.firstSlide$ = $(me.slides$[0]);
+        me.ActivateSlide(me.slideIndex);
+    });
+
+    this.touchComponent = new TouchRotatorComponent(this, {
+        element$: me.element$,
+        timer: me.timer,
+        GetSlideIndex: function () { return me.slideIndex; },
+        ActivateSlide: me.ActivateSlide,
+        GetSlidePercentageWidth: function () { return 100; },
+        autoRotate: me.options.autoRotate,
+        animateMove: me.options.animateMove,
+        wrap: me.options.wrap,
+        AnimateMove: function (amountInPercentage) { me.firstSlide$.css("margin-left", amountInPercentage + "%") },
+        slideCount: me.slideCount
+    });
+
+    //for mouseless ppl
+    if (me.desktopSlides$.length > 1) {
+        me.desktopSlides$.not(me.desktopSlides$.eq(0)).each(function () {
+            $(this).find("a").attr("tabindex", "-1");
+        });
+    }
+
+
+    me.ActivateSlide(this.slideIndex, 0);
+
+};
+
+Rotator.prototype.ProcessNavHit = function (element) {
+    var rawIndex = WindowSize.IsDesktopSize ? element.getAttribute("data-dslideindex") : element.getAttribute("data-mslideindex");
+    if (rawIndex) {
+        var index = parseInt(rawIndex);
+        this.ActivateSlide(index);
+    }
+};
+Rotator.prototype.IntervalHit = function () {
+    if (this.touchDown) return;
+    this.ActivateSlide(this.slideIndex + 1);
+};
+Rotator.prototype.ActivateSlide = function (index, duration) {
+
+    if (this.options.autoRotate) this.timer.Restart();
+
+    var me = this;
+
+    if (me.options.Nav$) {
+        me.options.Nav$.removeClass("selected");
+        me.slides$.removeClass("active");
+    }
+
+    me.desktopSlides$.eq(this.slideIndex).find("a").attr("tabindex", "-1");
+    me.desktopSlides$.eq(index).find("a").attr("tabindex", "0");
+
+    this.slideIndex = index;
+    var len = this.slideCount;
+
+    if (this.slideIndex >= len)
+        this.slideIndex = 0;
+    else if (this.slideIndex < 0) {
+        this.slideIndex = len - 1;
+    }
+
+    if (me.options.Nav$) {
+        me.options.Nav$.eq(this.slideIndex).addClass("selected");
+        me.slides$.eq(this.slideIndex).addClass("active");
+    }
+
+    var left = 0 - (this.slideIndex * 100);
+    if (duration == null) duration = 500;
+    if (duration > 0) {
+        if (this.modern) this.firstSlide$.css("margin-left", left + "%");
+        else this.firstSlide$.stop(true, false).animate({ "margin-left": left + "%" }, duration, "swing");
+    } else {
+        this.firstSlide$.addClass("disabletransition").css("margin-left", left + "%").removeClass("disabletransition");
+    }
+
+    $(this).trigger(me.options.eventName.toString(), { slideIndex: this.slideIndex, slideCount: this.slideCount });
+};
+
+Rotator.prototype.Pause = function () {
+    this.timer.Pause();
+    if (this.options.Resume$ != null)
+        this.options.Resume$.removeClass("active");
+
+    if (this.options.Pause$ != null)
+        this.options.Pause$.addClass("active");
+};
+
+Rotator.prototype.Resume = function () {
+    this.timer.Resume();
+    this.options.Pause$.removeClass("active");
+    this.options.Resume$.addClass("active");
+};

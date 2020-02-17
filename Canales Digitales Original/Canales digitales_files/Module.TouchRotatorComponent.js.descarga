@@ -1,0 +1,183 @@
+﻿var TouchRotatorComponent = function (rotator, config) {
+    this.rotator = rotator;
+    this.config = {
+        element$: null,
+        timer: null,
+        GetSlideIndex: null,
+        ActivateSlide: null,
+        AnimateMove: null,
+        GetSlidePercentageWidth: null,
+        wrap: null,
+        animateMove: null,
+        autoRotate: null,
+        slideCount: null
+    };
+    $.extend(this.config, config);
+
+    this.touches = new Object();
+    this.touchDown = false;
+    this.touchLeft = 0;
+    this.lockThreshold = 15; //Minimum difference between touchdown and touch up x-positions in order to rotate
+    this.verticalLock = -1;
+    this.trackingTouchID = null;
+    this.pointer = { startX: 0, startY: 0 };
+
+    this.modern = false;
+
+    this.Init();
+};
+
+TouchRotatorComponent.prototype.Init = function () {
+    var me = this;
+    var tmp = document.createElement('p').style;
+    this.modern = 'transition' in tmp || 'WebkitTransition' in tmp || 'MozTransition' in tmp || 'msTransition' in tmp || 'OTransition' in tmp;
+
+    if ("ontouchstart" in document.documentElement) {
+        this.config.element$.on("touchstart", function (e) { me.TouchDown(e.originalEvent); });
+        this.config.element$.on("touchmove", function (e) { me.TouchMove(e.originalEvent); });
+        this.config.element$.on("touchend touchcancel touchleave", function (e) { me.TouchUp(e.originalEvent); });
+    } else if (window.navigator.msPointerEnabled || window.navigator.pointerEnabled) {
+        this.config.element$.css("touch-action", "pan-y").css("-ms-touch-action", "pan-y"); //Default behaviour on y-axis, pointer events on x-axis.
+        this.config.element$.on("MSPointerDown pointerdown", function (e) { me.PointerDown(e.originalEvent); });
+        this.config.element$.on("MSPointerMove pointermove", function (e) { me.PointerMove(e.originalEvent); });
+        this.config.element$.on("MSPointerUp pointerup", function (e) { me.PointerUp(e.originalEvent); });
+    }
+};
+
+
+TouchRotatorComponent.prototype.TouchDown = function (e) {
+    for (var i = 0; i < e.changedTouches.length; i++) {
+        var touch = e.changedTouches[i];
+        var tid = touch.identifier.toString();
+
+        if (this.trackingTouchID == null) this.trackingTouchID = tid;
+
+        this.touches[tid] = { ID: tid, dx: touch.pageX, lx: touch.pageX, cx: touch.pageX, dy: touch.pageY, cy: touch.pageY };
+    };
+
+    this.touchDown = true;
+    if (this.config.timer != null) this.config.timer.Pause();
+    return false;
+};
+TouchRotatorComponent.prototype.TouchMove = function (e) {
+
+    e.stopPropagation();
+
+    for (var i = 0; i < e.changedTouches.length; i++) {
+        var touch = e.changedTouches[i];
+        var tid = touch.identifier.toString();
+        var target = this.touches[tid];
+
+        if (target == null) continue;
+        target.lx = target.cx; target.cx = touch.pageX; target.cy = touch.pageY;
+
+        var tracker = this.touches[this.trackingTouchID];
+        if (tracker != null) {
+            if (this.verticalLock == -1) {
+                var differenceX = tracker.dx - tracker.cx;
+                var differenceY = tracker.dy - tracker.cy;
+                if (Math.abs(differenceX) > Math.abs(differenceY))
+                    e.preventDefault();
+                if (Math.abs(differenceX) >= this.lockThreshold) { this.verticalLock = 0; }
+                else if (Math.abs(differenceY) >= this.lockThreshold) { this.verticalLock = 1; }
+            }
+            if (this.verticalLock == 0) {
+                e.preventDefault();
+                var current = 0 - (this.config.GetSlideIndex() * this.config.GetSlidePercentageWidth.call(this.rotator));
+                var offset = (tracker.cx - tracker.dx) / this.config.element$.width() * this.config.GetSlidePercentageWidth.call(this.rotator);
+                this.touchLeft = current + offset;
+                if (this.config.animateMove)
+                    this.config.AnimateMove.call(this.rotator, this.touchLeft);
+            }
+
+            if (this.verticalLock == 1) {
+                this.verticalLock = -1;
+                this.trackingTouchID = null;
+                this.touchDown = false;
+            }
+        };
+    }
+};
+TouchRotatorComponent.prototype.TouchUp = function (e) {
+    var me = this;
+    var lastOffset = 0;
+    var totalOffset = 0;
+
+    for (var i = 0; i < e.changedTouches.length; i++) {
+        var tid = e.changedTouches[i].identifier.toString();
+        if (this.touches[tid] != null) {
+            if (this.trackingTouchID == tid) {
+                lastOffset = this.touches[tid].cx - this.touches[tid].lx;
+                totalOffset = this.touches[tid].cx - this.touches[tid].dx;
+            }
+            delete this.touches[tid];
+        }
+        if (this.trackingTouchID == tid) this.trackingTouchID = null;
+    }
+
+    if (Object.getOwnPropertyNames(this.touches).length > 0) {
+        //still touches available, get the 
+        var targetID = null;
+        for (var tid in this.touches) {
+            var iid = parseInt(tid);
+            if (targetID == null || targetID > iid) {
+                targetID = iid;
+                this.trackingTouchID = tid;
+            }
+        }
+    }
+    else {
+        if (this.verticalLock == 0) {
+            var current = 0 - (this.config.GetSlideIndex() * this.config.GetSlidePercentageWidth.call(this.rotator));
+            var targetIndex = this.config.GetSlideIndex();
+
+            if (this.touchLeft > current && lastOffset >= 0) targetIndex = this.config.GetSlideIndex() - 1;
+            else if (this.touchLeft < current && lastOffset <= 0) targetIndex = this.config.GetSlideIndex() + 1;
+
+            var width = this.config.element$.width();
+            var percentToMove = this.config.GetSlidePercentageWidth.call(this.rotator) - Math.abs(totalOffset * this.config.GetSlidePercentageWidth.call(this.rotator) / width);
+
+            //this.mainList$.removeClass("pauseEffects");
+            if (me.config.wrap || (targetIndex >= 0 && targetIndex < this.config.slideCount)) this.config.ActivateSlide.call(this.rotator, targetIndex, percentToMove * 5);
+            else this.config.ActivateSlide.call(this.config.rotator, this.config.GetSlideIndex(), 0);
+
+            if (me.config.autoRotate == true || me.config.autoRotate == null) { me.Restart(); }
+        }
+        this.verticalLock = -1;
+        this.touchDown = false;
+    }
+};
+
+TouchRotatorComponent.prototype.PointerDown = function (e) {
+
+    if (!e.isPrimary || e.pointerType == e.MSPOINTER_TYPE_MOUSE || e.pointerType == "mouse") return;
+
+    this.pointer.startX = e.pageX;
+    this.pointer.startY = e.pageY;
+
+};
+TouchRotatorComponent.prototype.PointerMove = function (e) {
+
+    if (!e.isPrimary || e.pointerType == e.MSPOINTER_TYPE_MOUSE || e.pointerType == "mouse") return;
+
+    e.stopPropagation();
+
+    var current = 0 - (this.config.GetSlideIndex() * this.config.GetSlidePercentageWidth.call(this.rotator));
+    var offset = (e.pageX - this.pointer.startX) / this.config.element$.width() * this.config.GetSlidePercentageWidth.call(this.rotator);
+    if (this.config.animateMove)
+        this.config.AnimateMove.call(this.rotator, (current + offset));
+
+};
+TouchRotatorComponent.prototype.PointerUp = function (e) {
+
+    if (!e.isPrimary || Math.abs(this.pointer.startX - e.pageX) <= this.lockThreshold || e.pointerType == e.MSPOINTER_TYPE_MOUSE || e.pointerType == "mouse") return;
+
+    var targetIndex = this.config.GetSlideIndex();
+
+    if (e.pageX > this.pointer.startX) targetIndex = this.config.GetSlideIndex() - 1;
+    else targetIndex = this.config.GetSlideIndex() + 1;
+
+    if (this.config.wrap || (targetIndex >= 0 && targetIndex < this.config.slideCount)) this.config.ActivateSlide.call(this.rotator, targetIndex, 0);
+    else this.config.ActivateSlide.call(this.rotator, this.config.GetSlideIndex(), 0);
+
+};

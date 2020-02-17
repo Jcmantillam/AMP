@@ -1,0 +1,166 @@
+@font-face  { font-family: "icomoon"; src: url("/Fonts/Colpatria/icomoon.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"]  { position: relative; display: inline-block; color: inherit; font-family: 'icomoon' !important; font-size: 2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: 1; text-transform: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; speak: none; *display: inline; zoom: 1; }
+    [class^="icon-"].icon-xs, [class*=" icon-"].icon-xs  { font-size: 1rem; }
+    [class^="icon-"].icon-md, [class*=" icon-"].icon-md  { font-size: 4rem; }
+    [class^="icon-"].icon-sm, [class*=" icon-"].icon-sm  { font-size: 2rem; }
+    [class^="icon-"].icon-lg, [class*=" icon-"].icon-lg  { font-size: 6rem; }
+    [class^="icon-"].icon-xl, [class*=" icon-"].icon-xl  { font-size: 8rem; }
+
+.icon-icon_congrats_48px:before  { content: "\e994"; }
+.icon-icon_credit_score_48px:before  { content: "\e993"; }
+.icon-icon_rewards_48px:before  { content: "\e992"; }
+.icon-icon_calendar_48px:before  { content: "\e991"; }
+.icon-icon_mobile_deposit_48px:before  { content: "\e990"; }
+.icon-icon_money_management_48px:before  { content: "\e98f"; }
+.icon-icon_transfer_48px:before  { content: "\e98e"; }
+.icon-icon_bill_48px:before  { content: "\e98d"; }
+.icon-icon_security_48px:before  { content: "\e98c"; }
+.icon-icon_hide_password_48px:before  { content: "\e98b"; }
+.icon-Icon_mfa-b3:before  { content: "\e98a"; }
+.icon-Icon_alert-b3:before  { content: "\e989"; }
+.icon-Icon_congrats-b3:before  { content: "\e988"; }
+.icon-Icon_data-encryption-b3:before  { content: "\e987"; }
+.icon-Icon_speedometer-b3:before  { content: "\e986"; }
+.icon-Icon_resize-small-b3:before  { content: "\e985"; }
+.icon-Icon_Info1:before  { content: "\e982"; }
+.icon-Icon_Question1:before  { content: "\e983"; }
+.icon-Icon_Close1:before  { content: "\e984"; }
+
+.icon-icon_download:before  { content: "\e97a"; }
+.icon-Icon_giftbox:before  { content: "\e97b"; }
+.icon-Icon_Restaurants:before  { content: "\e900"; }
+.icon-Icon_Badge:before  { content: "\e901"; }
+.icon-Icon_Bicycle:before  { content: "\e902"; }
+.icon-Icon_Boat:before  { content: "\e903"; }
+.icon-Icon_Branch:before  { content: "\e904"; }
+.icon-Icon_BurgerMenu:before  { content: "\e905"; }
+.icon-Icon_Calculator:before  { content: "\e906"; }
+.icon-Icon_Calendar:before  { content: "\e907"; }
+.icon-Icon_CalendarMoney:before  { content: "\e908"; }
+.icon-Icon_CalendarNoFee:before  { content: "\e909"; }
+.icon-Icon_CalendarTime:before  { content: "\e90a"; }
+.icon-Icon_CanadaMaple:before  { content: "\e90b"; }
+.icon-Icon_Car:before  { content: "\e90c"; }
+.icon-Icon_Channel:before  { content: "\e90d"; }
+.icon-Icon_Chat:before  { content: "\e90e"; }
+.icon-Icon_ChatChat:before  { content: "\e90f"; }
+.icon-Icon_Click:before  { content: "\e910"; }
+.icon-Icon_Computer:before  { content: "\e911"; }
+.icon-Icon_Conversation:before  { content: "\e912"; }
+.icon-Icon_Creditcard:before  { content: "\e913"; }
+.icon-Icon_SignInLock:before  { content: "\e914"; }
+.icon-Icon_Dining:before  { content: "\e915"; }
+.icon-Icon_Disability:before  { content: "\e916"; }
+.icon-Icon_Document:before  { content: "\e917"; }
+.icon-Icon_EcoCar:before  { content: "\e918"; }
+.icon-Icon_Email:before  { content: "\e919"; }
+.icon-Icon_EMT:before  { content: "\e91a"; }
+.icon-Icon_EMTMobile:before  { content: "\e91b"; }
+.icon-Icon_Filter:before  { content: "\e91c"; }
+.icon-Icon_Fingerprint:before  { content: "\e91d"; }
+.icon-Icon_FirstTimeBuyer:before  { content: "\e91e"; }
+.icon-Icon_Gas:before  { content: "\e91f"; }
+.icon-Icon_GraphBar:before  { content: "\e920"; }
+.icon-Icon_GraphBarLine:before  { content: "\e921"; }
+.icon-Icon_GraphLine:before  { content: "\e922"; }
+.icon-Icon_GraphPie:before  { content: "\e923"; }
+.icon-Icon_HelpHome:before  { content: "\e924"; }
+.icon-Icon_HelpMoney:before  { content: "\e925"; }
+.icon-Icon_House:before  { content: "\e926"; }
+.icon-Icon_Insurance:before  { content: "\e927"; }
+.icon-Icon_InsuranceEmergency:before  { content: "\e928"; }
+.icon-Icon_InsuranceHealth:before  { content: "\e929"; }
+.icon-Icon_InsuranceLife:before  { content: "\e92a"; }
+.icon-Icon_InsuranceMoney:before  { content: "\e92b"; }
+.icon-Icon_InsuranceWill:before  { content: "\e92c"; }
+.icon-Icon_Interest:before  { content: "\e92d"; }
+.icon-Icon_Investment:before  { content: "\e92e"; }
+.icon-Icon_Key:before  { content: "\e92f"; }
+.icon-Icon_Lamp:before  { content: "\e930"; }
+.icon-Icon_Lightbulb:before  { content: "\e931"; }
+.icon-Icon_LineofCredit:before  { content: "\e932"; }
+.icon-Icon_LocationGlobe:before  { content: "\e933"; }
+.icon-Icon_LocationPin:before  { content: "\e934"; }
+.icon-Icon_LowInterest:before  { content: "\e935"; }
+.icon-Icon_Luggage:before  { content: "\e936"; }
+.icon-Icon_Megaphone:before  { content: "\e937"; }
+.icon-Icon_MobileDeposit:before  { content: "\e938"; }
+.icon-Icon_Money:before  { content: "\e939"; }
+.icon-Icon_MoneyCar:before  { content: "\e93a"; }
+.icon-Icon_MoneyCashStack:before  { content: "\e93b"; }
+.icon-Icon_MoneyCheque:before  { content: "\e93c"; }
+.icon-Icon_MoneyCoin:before  { content: "\e93d"; }
+.icon-Icon_MoneyCoins:before  { content: "\e93e"; }
+.icon-Icon_Chair:before  { content: "\e93f"; }
+.icon-Icon_MoneyDoc:before  { content: "\e940"; }
+.icon-Icon_MoneyDollar:before  { content: "\e941"; }
+.icon-Icon_MoneyForeign:before  { content: "\e942"; }
+.icon-Icon_MoneyHome:before  { content: "\e943"; }
+.icon-Icon_MoneyInvest:before  { content: "\e944"; }
+.icon-Icon_MoneyLock:before  { content: "\e945"; }
+.icon-Icon_MoneyRetirementNestEgg:before  { content: "\e946"; }
+.icon-Icon_MoneySafe:before  { content: "\e947"; }
+.icon-Icon_MoneyStudent:before  { content: "\e948"; }
+.icon-Icon_MoneyTalk:before  { content: "\e949"; }
+.icon-Icon_MoneyTransfer:before  { content: "\e94a"; }
+.icon-Icon_MoneyWithdraw:before  { content: "\e94b"; }
+.icon-Icon_MortgageChart:before  { content: "\e94c"; }
+.icon-Icon_MortgageRenovation:before  { content: "\e94d"; }
+.icon-Icon_Motorcyle:before  { content: "\e94e"; }
+.icon-Icon_Movies1:before  { content: "\e94f"; }
+.icon-Icon_Movies2:before  { content: "\e950"; }
+.icon-Icon_NewsArticle:before  { content: "\e951"; }
+.icon-Icon_NoteBook:before  { content: "\e952"; }
+.icon-Icon_OldPhone:before  { content: "\e953"; }
+.icon-Icon_Online:before  { content: "\e954"; }
+.icon-Icon_Papers:before  { content: "\e955"; }
+.icon-Icon_Partner:before  { content: "\e956"; }
+.icon-Icon_Person:before  { content: "\e957"; }
+.icon-Icon_PharmacyDrugs:before  { content: "\e958"; }
+.icon-Icon_Phone:before  { content: "\e959"; }
+.icon-Icon_PiggyBank:before  { content: "\e95a"; }
+.icon-Icon_PiggyInterest:before  { content: "\e95b"; }
+.icon-Icon_Printer:before  { content: "\e95c"; }
+.icon-Icon_Productivity:before  { content: "\e95d"; }
+.icon-Icon_Rate:before  { content: "\e95e"; }
+.icon-Icon_Receipt:before  { content: "\e95f"; }
+.icon-Icon_Rewards:before  { content: "\e960"; }
+.icon-Icon_Robot:before  { content: "\e961"; }
+.icon-Icon_RV:before  { content: "\e962"; }
+.icon-Icon_Safe:before  { content: "\e963"; }
+.icon-Icon_Search:before  { content: "\e964"; }
+.icon-Icon_SearchPage:before  { content: "\e965"; }
+.icon-Icon_SecondProperty:before  { content: "\e966"; }
+.icon-Icon_SecurityLock:before  { content: "\e967"; }
+.icon-Icon_SecurityMoney:before  { content: "\e968"; }
+.icon-Icon_SecurityShield:before  { content: "\e969"; }
+.icon-Icon_SecurityShieldCheck:before  { content: "\e96a"; }
+.icon-Icon_Settings:before  { content: "\e96b"; }
+.icon-Icon_ShoppingBag:before  { content: "\e96c"; }
+.icon-Icon_ShoppingBasket:before  { content: "\e96d"; }
+.icon-Icon_ShoppingCart:before  { content: "\e96e"; }
+.icon-Icon_Student:before  { content: "\e96f"; }
+.icon-Icon_Sunset:before  { content: "\e970"; }
+.icon-Icon_TaxFree:before  { content: "\e971"; }
+.icon-Icon_Time:before  { content: "\e972"; }
+.icon-Icon_Transfer:before  { content: "\e973"; }
+.icon-Icon_Travel:before  { content: "\e974"; }
+.icon-Icon_USDollar:before  { content: "\e975"; }
+.icon-Icon_Video:before  { content: "\e976"; }
+.icon-Icon_Web:before  { content: "\e977"; }
+.icon-Icon_WebGlobe:before  { content: "\e978"; }
+.icon-Icon_World:before  { content: "\e979"; }
+.icon-icon_moneytag:before  { content: "\e995"; }
+
+.icon-Icon_MoneySenseCashback  { content: ""; width: 60px; height: 60px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("/etc/designs/bns/img/vendor-logos/moneysense-cashback-2017-EN.svg"); -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+.icon-Icon_CanvasLinesLoans  { content: ""; width: 40px; height: 40px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("/etc/designs/bns/img/icons/canvas/Lines&Loans.svg"); -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+.icon-Icon_CanvasMoneyManagement  { content: ""; width: 40px; height: 40px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("/etc/designs/bns/img/icons/canvas/MoneyManagement.svg"); -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+.icon-Icon_CanvasReferences  { content: ""; width: 40px; height: 40px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("/etc/designs/bns/img/icons/canvas/References.svg"); -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+.icon-Icon_CanvasRequestMoney  { content: ""; width: 40px; height: 40px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("/etc/designs/bns/img/icons/canvas/RequestMoney.svg"); -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+.icon-Icon_CanvasSuccess  { content: ""; width: 40px; height: 40px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("/etc/designs/bns/img/icons/canvas/Success.svg"); -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+.icon-Icon_CanvasUmbrella  { content: ""; width: 40px; height: 40px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("/etc/designs/bns/img/icons/canvas/Umbrella.svg"); -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+
+.icon-Icon_CanvasFocus  { content: ""; width: 40px; height: 40px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("../../img/icons/canvas/Focus.svg"); -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+.icon-Icon_CanvasWealth  { content: ""; width: 40px; height: 40px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("../../img/icons/canvas/Wealth.svg"); -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+.icon-Icon_CanvasSavings  { content: ""; width: 40px; height: 40px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("../../img/icons/canvas/Savings.svg"); -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }

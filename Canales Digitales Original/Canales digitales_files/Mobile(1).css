@@ -1,0 +1,498 @@
+@font-face  { font-family: 'Scotia-Headline'; src: url('/Fonts/Scotia_W_Headline.woff') format('woff'), url('/Fonts/Scotia_W_Headline.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+@font-face  { font-family: 'Scotia'; src: url('/Fonts/Scotia_W_Rg.woff') format('woff'), url('/Fonts/Scotia_W_Rg.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face  { font-family: 'Scotia'; src: url('/Fonts/Scotia_W_Lt.woff') format('woff'), url('/Fonts/Scotia_W_Lt.woff2') format('woff2'); font-weight: 300; font-style: normal; }
+@font-face  { font-family: 'Scotia'; src: url('/Fonts/Scotia_W_Bd.woff') format('woff'), url('/Fonts/Scotia_W_Bd.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+@font-face  { font-family: 'Frutiger'; src: url('/Fonts/Frutiger-Roman.eot'); src: url('/Fonts/Frutiger-Roman.eot?#iefix') format('embedded-opentype'), url('/Fonts/Frutiger-Roman.woff') format('woff'), url('/Fonts/Frutiger-Roman.ttf') format('truetype'), url('/Fonts/Frutiger-Roman.svg#open_sansbold') format('svg'); font-weight: 400; font-style: normal; }
+@font-face  { font-family: 'Frutiger'; src: url('/Fonts/Frutiger-Light.eot'); src: url('/Fonts/Frutiger-Light.eot?#iefix') format('embedded-opentype'),url('/Fonts/Frutiger-Light.woff') format('woff'),url('/Fonts/Frutiger-Light.ttf') format('truetype'),url('/Fonts/Frutiger-Bold.svg#Frutiger-Light') format('svg'); font-weight: 300; font-style: normal; }
+@font-face  { font-family: 'Frutiger'; src: url('/Fonts/Frutiger-Bold.eot'); src: url('/Fonts/Frutiger-Bold.eot?#iefix') format('embedded-opentype'),url('/Fonts/Frutiger-Bold.woff') format('woff'),url('/Fonts/Frutiger-Bold.ttf') format('truetype'),url('/Fonts/Frutiger-Bold.svg#Frutiger-Bold') format('svg'); font-weight: 700; font-style: normal; }
+
+:root  { --primary-brand: #ED0722; /* Red */ --primary-default: #333333; /* Dark Grey */ --primary-alternate: #757575; /* Medium Grey */ --primary-highlight: #8230DF; /* Violet */ --secondary-success: #008660; /* Green */ --secondary-notification: #BE207A; /* Fuschia */ --secondary-info: #087BB4; /* Blue */ --secondary-error: #CB061D; /* Darker Red */ --neutral-disabled: #D6D6D6; /* Light Grey */ --neutral-outline: #E2E8EE; /* Light Blue-Grey */ --background-alternate: #FAFBFD; /* Off White */ --background-section: #F6F7FC; /* Off White (Cool) */ --background-dark: #333333; /* Dark Grey */; }
+
+html  { background: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -ms-overflow-style: scrollbar; -webkit-tap-highlight-color: rgba(0,0,0,0); }
+body  { padding-top: 60px; color: #333333; font-size: 1rem; line-height: 1.5; font-family: Scotia, Frutiger, Arial, Helvetica, sans-serif; }
+    body > * div  { background: none; }
+
+a  { color: #8230DF; text-decoration: none; }
+    a[href^="tel:"]  { cursor: default; text-decoration: none; font-weight: 700; }
+    a:hover, a:focus  { text-decoration: underline; }
+
+hr  { background-color: #E2E8EE; }
+
+button, input, select, textarea  { font-family: inherit; font-size: inherit; line-height: normal; }
+input, select, textarea  { padding: 0; font-size: 20px; line-height: 2em; background: none; border: none; border-bottom: 1px solid #757575; }
+    input:focus, select:focus, textarea:focus  { border-bottom: 2px solid #8230DF; }
+select  { height: 2em; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/icon_chevron-purple-down.svg') no-repeat right center; -webkit-appearance: none; }
+
+h1, h2, h3, h4, h5, h6  { margin: 0; font-weight: 700; }
+h1  { margin-top: 30px; font-family: Scotia-Headline; font-size: 46px; line-height: 1.1; }
+h2  { font-family: Scotia-Headline; font-size: 36px; margin: 0; }
+h3  { font-size: 20px; font-weight: normal; }
+h4  { font-size: 16px; margin: 5px 0; }
+h5  { font-size: 14px; margin: 5px 0; }
+h6  { font-size: 12px; margin: 0; }
+
+img  { border: none; }
+
+small  { font-size: 0.85em; }
+
+
+
+/* Generic Styles
+**************************/
+.btn  { position: relative; display: inline-block; font-size: 16px; font-weight: 700; background: none; box-sizing: border-box; cursor: pointer; *display: inline; zoom: 1; }
+    .btn:hover, .btn:focus  { text-decoration: none !important; }
+.btn-primary, .btn-default  { padding: 15px 30px; border: 1px solid transparent; border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; }
+.btn-primary  { color: #fff; background-color: #ED0722; }
+    .btn-primary:hover, .btn-primary:focus  { background-color: #CB061D; }
+.btn-default  { color: #ED0722; border-color: #ED0722; }
+    .btn-default:hover, .btn-default:focus  { color: #fff; background-color: #CB061D; border-color: #fff; }
+
+.btn-pill  { padding: 14px 30px; border: 1px solid currentColor; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; -ms-border-radius: 50px; -o-border-radius: 50px; }
+    .btn-pill:hover, .btn-pill:focus  { padding: 14px 30px; color: #fff; border: 1px solid currentColor; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; -ms-border-radius: 50px; -o-border-radius: 50px; }
+
+.btn-card-default  { color: #8230DF; }
+    .btn-card-default:hover, .btn-card-default:focus  { background-color: #8230DF; }
+.btn-card-new  { color: #BE207A; }
+    .btn-card-new:hover, .btn-card-new:focus  { background-color: #BE207A; }
+.btn-card-help  { color: #CB061D; }
+    .btn-card-help:hover, .btn-card-help:focus  { background-color: #CB061D; }
+.btn-card-success  { color: #008660; }
+    .btn-card-success:hover, .btn-card-success:focus  { background-color: #008660; }
+.btn-card-moreinfo  { color: #087BB4; }
+    .btn-card-moreinfo:hover, .btn-card-moreinfo:focus  { background-color: #087BB4; }
+.btn-card-unselected  { color: #757575; }
+    .btn-card-unselected:hover, .btn-card-unselected:focus  { background-color: #757575; }
+
+.btn-background  { color: #333333; background: #fff; border-color: transparent; }
+    .btn-background:hover, btn-background:focus  { color: #fff; background: transparent; border-color: currentColor; }
+
+.btn-close:after  { content: "x"; color: #fff; font-size: 16px; font-weight: bold; background-color: #000; border-radius: 20px; border: 3px solid #D6D6D6; padding: 1px 6px; float: right; -webkit-border-radius: 20px; -moz-border-radius: 20px; -ms-border-radius: 20px; -o-border-radius: 20px; }
+
+
+/* Legacy buttons */
+.button, input.button  { position: relative; display: inline-block; padding: 15px 30px; font-size: 16px; font-weight: 700; background: none; border: 1px solid transparent; border-radius: 8px; box-sizing: border-box; cursor: pointer; *display: inline; zoom: 1; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; }
+    .button:hover, .button:focus, input.button:hover, input.button:focus  { text-decoration: none !important; }
+
+
+/* General */
+.visible-mobile  { display: block; }
+.visible-desktop  { display: none; }
+
+.col  { width: 100%; padding: 0 15px; box-sizing: border-box; }
+
+.wrapper  { background-image: none; padding: 0; }
+
+ul.checked li  { list-style-type: none; }
+    ul.checked li:before  { content: "\2713"; color: #ED0722; font-weight: bold; padding-right: 8px; }
+
+.text-smarty-pink  { color: #c8155e !important; }
+.text-smarty-blue  { color: #1b8fc6 !important; }
+.text-smarty-purple  { color: #663993 !important; }
+.text-smarty-green  { color: #817C00 !important; }
+
+
+
+/* Lity - Modal Dialogue */
+.lity  { z-index: 999999; }
+.lity-inline  { background: rgba(153, 153, 153, 0.92); }
+    .lity-inline .lity-container  { position: relative; width: 100%; max-width: 600px; background: #fff; box-shadow: 0 10px 20px -10px rgba(0,0,0,0.26); transform: scale(1); opacity: 1; transition: all .3s ease; -webkit-box-shadow: 0 10px 20px -10px rgba(0,0,0,0.26); -moz-box-shadow: 0 10px 20px -10px rgba(0,0,0,0.26); -ms-box-shadow: 0 10px 20px -10px rgba(0,0,0,0.26); -o-box-shadow: 0 10px 20px -10px rgba(0,0,0,0.26); -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); }
+    .lity-inline.lity-loading .lity-container  { opacity: 0; transform: scale(0.6); -webkit-transform: scale(0.6); -moz-transform: scale(0.6); -ms-transform: scale(0.6); -o-transform: scale(0.6); }
+    .lity-inline.lity-closed .lity-container  { opacity: 0; transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1); }
+    .lity-inline .lity-content  { transform: none; transition: none; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; }
+        .lity-inline .lity-content:after  { content: none; }
+.lity-loading .lity-inline .lity-content, .lity-closed .lity-inline .lity-content  { transform: none; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; }
+.lity-inline .lity-close  { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; color: transparent; font-size: 0; text-shadow: none; }
+    .lity-inline .lity-close:before, .lity-inline .lity-close:after  { content: ""; position: absolute; display: block; top: 50%; left: 50%; height: 2px; width: 26px; background: #757575; }
+    .lity-inline .lity-close:before  { transform: translateX(-50%) rotate(-45deg); -webkit-transform: translateX(-50%) rotate(-45deg); -moz-transform: translateX(-50%) rotate(-45deg); -ms-transform: translateX(-50%) rotate(-45deg); -o-transform: translateX(-50%) rotate(-45deg); }
+    .lity-inline .lity-close:after  { transform: translateX(-50%) rotate(45deg); -webkit-transform: translateX(-50%) rotate(45deg); -moz-transform: translateX(-50%) rotate(45deg); -ms-transform: translateX(-50%) rotate(45deg); -o-transform: translateX(-50%) rotate(45deg); }
+
+.lity .dialog--header  { display: block; align-items: center; flex-flow: column nowrap; margin: 0; padding: 1.5rem 3.5rem 1.5rem 40px; font-size: 18px; font-weight: 700; line-height: 1.2; text-align: center; }
+.lity .dialog--body  { width: 100%; padding: 0 40px 20px 40px; line-height: 18px; overflow-y: auto; transition: all .3s ease .15s; -webkit-overflow-scrolling: touch; }
+
+/* Lity - Video embed based on Canada site */
+.yv--link  { position: relative; display: inline-block; background: #333333; *display: inline; zoom: 1; }
+.yv--thumbnail  { display: block; transition: opacity 0.3s ease; }
+.yv--link:hover .yv--thumbnail, .yv--link:focus .yv--thumbnail  { opacity: 0.7; }
+.yv--play  { position: absolute; display: block; right: 30px; bottom: 30px; width: 50px; height: 50px; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/icon_play.svg') no-repeat 0 0; background-size: contain; transition: all 0.3s ease; -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+.yv--link:hover .yv--play, .yv--link:focus .yv--play  { right: 60px; bottom: 60px; transform: scale(1.3); -webkit-transform: scale(1.3); -moz-transform: scale(1.3); -ms-transform: scale(1.3); -o-transform: scale(1.3); }
+
+
+
+/* Template layout
+*********************************/
+#siteHeader  { position: fixed; top: 0; left: 0; right: 0; background: rgba(250, 251, 253, 0); z-index: 100000; transition: bottom 0s 0.6s, background 0.3s ease 0.3s; --header-height: 60px; --search-height: 128px; --menu-bottom-space: 80px; --footer-height: 85px; }
+    #siteHeader.open  { background: rgba(250, 251, 253, 1); bottom: 0; transition: bottom 0s, background 0.3s; }
+    #siteHeader > div  { background: none; border: none; }
+
+#top  { display: none; }
+
+#logoHeader  { background: #fff; }
+    #logoHeader > .col  { position: relative; display: flex; align-items: center; width: 100%; height: 60px; padding: 0 85px 0 27px; border-top: 2px solid #ED0722; border-bottom: 1px solid #eee; box-sizing: border-box; }
+#siteHeader #siteLogo  { flex: 0 0 auto; float: none; display: block; height: auto; max-width: 58px; max-height: 58px; margin: 0; }
+#siteLogo img  { display: block; height: auto; }
+
+#newSignIn  { margin: auto; }
+.newSignIn-dropDown  { position: relative; z-index: 100; }
+
+.newSignIn-link  { position: relative; display: flex; align-items: center; justify-content: center; height: 40px; min-width: calc(100vw - 185px); padding: 0 2.5rem; color: #fff; font-size: 0.75rem; background: #ED0722 no-repeat 15px center; background-size: auto 24px; border: none; border-radius: 0.3rem; box-sizing: border-box; transition: background 0.25s ease-in, border-radius 0.5s 0s; z-index: 1; -webkit-background-size: auto 24px; -moz-background-size: auto 24px; -ms-background-size: auto 24px; -o-background-size: auto 24px; -webkit-border-radius: 0.3rem; -moz-border-radius: 0.3rem; -ms-border-radius: 0.3rem; -o-border-radius: 0.3rem; }
+    .newSignIn-link:after  { content: ""; position: absolute; width: 0.8rem; height: 1rem; top: 50%; right: 1rem; margin-top: -0.5rem; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/icon_chevron-white-down.svg') no-repeat center center; background-size: contain; transform: rotate(0deg); transition: 0.25s; -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); }
+    .newSignIn-link:hover, .newSignIn-link:focus  { ; }
+
+.newSignIn-icon  { position: absolute; top: 50%; left: 1rem; width: 1rem; height: 1rem; margin-top: -0.5rem; background: no-repeat center center; background-size: contain; -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+
+.newSignIn-dropDownList  { display: block; position: absolute; top: 100%; left: 0; right: 0; height: auto; max-height: 0; margin: 0; padding: 0.25em 0 0.1em 0; color: #fff; list-style: none; background-color: #ED0722; border-radius: 0 0 0.3rem 0.3rem; box-shadow: 0 0 0.5rem #fff; transition: max-height 0.25s, visibility 0.25s 0s; overflow: auto; visibility: hidden; -webkit-border-radius: 0 0 0.3rem 0.3rem; -moz-border-radius: 0 0 0.3rem 0.3rem; -ms-border-radius: 0 0 0.3rem 0.3rem; -o-border-radius: 0 0 0.3rem 0.3rem; -webkit-box-shadow: 0 0 0.5rem #fff; -moz-box-shadow: 0 0 0.5rem #fff; -ms-box-shadow: 0 0 0.5rem #fff; -o-box-shadow: 0 0 0.5rem #fff; }
+    .newSignIn-dropDownList:before  { content: ""; position: absolute; top: 0; left: 1em; right: 1em; height: 2px; background: #fff; }
+.newSignIn-dropDownListItem  { display: block; }
+.newSignIn-dropDownListLink  { display: block; padding: 0.5em 1em; color: #fff; font-size: 0.875rem; }
+
+.newSignIn--open .newSignIn-link  { border-radius: 0.3em 0.3em 0 0; transition: background 0.3s ease-in; -webkit-border-radius: 0.3em 0.3em 0 0; -moz-border-radius: 0.3em 0.3em 0 0; -ms-border-radius: 0.3em 0.3em 0 0; -o-border-radius: 0.3em 0.3em 0 0; }
+    .newSignIn--open .newSignIn-link:after  { transform: rotate(-180deg); -webkit-transform: rotate(-180deg); -moz-transform: rotate(-180deg); -ms-transform: rotate(-180deg); -o-transform: rotate(-180deg); }
+.newSignIn--open .newSignIn-dropDownList  { max-height: calc(100vh - 100px); transition: max-height 0.25s; visibility: visible; }
+
+.newSignIn-activate  { display: none; }
+
+#serviceMenuHeader  { background-color: #eee; }
+
+#siteNav  { background: none; border: none; overflow: hidden; }
+    #siteNav #showMegaMenu  { position: absolute; top: 0; right: 0; width: 40px; height: 40px; margin: 10px 27px 10px 0; padding: 0; background: none; border: none; cursor: pointer; transition: all .3s ease; }
+#showMegaMenu span  { position: absolute; display: block; height: 1px; left: 7px; right: 8px; background: #333333; opacity: 1; transform: rotate(0deg); transition: all 0.3s ease; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); }
+    #showMegaMenu span:nth-of-type(1)  { top: 27px; }
+    #showMegaMenu span:nth-of-type(2), #showMegaMenu span:nth-of-type(3)  { top: 20px; }
+    #showMegaMenu span:nth-of-type(4)  { top: 13px; }
+#showMegaMenu.active span:nth-of-type(1)  { top: 20px; width: 0; left: 50%; }
+#showMegaMenu.active span:nth-of-type(2)  { transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); }
+#showMegaMenu.active span:nth-of-type(3)  { transform: rotate(45deg); -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); }
+#showMegaMenu.active span:nth-of-type(4)  { top: 20px; width: 0; left: 50%; }
+
+#megaMenuHeader  { height: 0; background: none; opacity: 0; visibility: hidden; transition: height 0s 0.3s, opacity 0.3s ease, visibility 0s 0.3s; }
+.open #megaMenuHeader  { height: calc(100vh - 60px); opacity: 1; visibility: visible; transition: height 0s, opacity 0.3s ease 0.3s, visibility 0s; }
+#megaMenuHeader #mega-menu  { padding: 0; border: none; }
+
+#secondaryContent  { background: #fff; }
+
+.searchForm  { position: relative; bottom: inherit; right: inherit; height: 48px; margin: 10px 0; padding: 30px; background: #fff; box-shadow: 0 2px 10px #E2E8EE; transform: scale(1.1); transition: transform 0.3s ease; -webkit-box-shadow: 0 2px 10px #E2E8EE; -moz-box-shadow: 0 2px 10px #E2E8EE; -ms-box-shadow: 0 2px 10px #E2E8EE; -o-box-shadow: 0 2px 10px #E2E8EE; -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1); -webkit-transition: -webkit-transform 0.3s ease; -moz-transition: -moz-transform 0.3s ease; -ms-transition: -ms-transform 0.3s ease; --webkit-transform-transiti-webkit-transformn: transf-webkit-transformrm 0.3s ease; }
+.open .searchForm  { transform: scale(1); transition: transform 0.3s ease 0.2s; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); -webkit-transition: -webkit-transform 0.3s ease 0.2s; -moz-transition: -moz-transform 0.3s ease 0.2s; -ms-transition: -ms-transform 0.3s ease 0.2s; --webkit-transform-transiti-webkit-transformn: transf-webkit-transformrm 0.3s ease 0.2s; }
+.txtSearch  { position: relative; width: 100%; height: 100%; min-height: 40px; padding: 0 48px 0 15px; color: #757575; font-size: inherit; text-align: left; background-color: #fff; border: 1px solid #E2E8EE; border-radius: .4rem; box-sizing: border-box; z-index: 10; transition: all 0.3s ease 0.05s; -webkit-border-radius: .4rem; -moz-border-radius: .4rem; -ms-border-radius: .4rem; -o-border-radius: .4rem; }
+.searchButton  { position: absolute; display: block; top: 30px; right: 30px; width: 48px; height: 48px; padding: 12px; background: none; border: none; box-sizing: border-box; cursor: pointer; z-index: 20; }
+
+.megaMenuWrapper  { max-height: calc(100vh - (60px + 128px + 85px)); width: 100%; padding: 0 0 80px 0; box-sizing: border-box; overflow: auto; overflow-x: hidden; transform: scale(1.1); transition: transform 0.3s ease; -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1); -webkit-transition: -webkit-transform 0.3s ease; -moz-transition: -moz-transform 0.3s ease; -ms-transition: -ms-transform 0.3s ease; --webkit-transform-transiti-webkit-transformn: transf-webkit-transformrm 0.3s ease; }
+    .megaMenuWrapper.active  { overflow: visible; }
+.open .megaMenuWrapper  { transform: scale(1); transition: transform 0.3s ease 0.3s, left 0.3s ease; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); -webkit-transition: -webkit-transform 0.3s ease 0.3s, left 0.3s ease; -moz-transition: -moz-transform 0.3s ease 0.3s, left 0.3s ease; -ms-transition: -ms-transform 0.3s ease 0.3s, left 0.3s ease; --webkit-transform-transiti-webkit-transformn: transf-webkit-transformrm 0.3s ease 0.3s, left 0.3s ease; }
+
+.megaMenu  { left: 0; background: #fff; border: none; box-shadow: 0 2px 10px #E2E8EE; transition: all 0.3s ease; -webkit-box-shadow: 0 2px 10px #E2E8EE; -moz-box-shadow: 0 2px 10px #E2E8EE; -ms-box-shadow: 0 2px 10px #E2E8EE; -o-box-shadow: 0 2px 10px #E2E8EE; }
+    .megaMenu.active  { left: -100%; }
+    .megaMenu a  { color: #8230DF; font-size: inherit; font-weight: 400; margin: 0 1.5rem; border: none; }
+    .megaMenu strong  { position: relative; display: block; margin: 0 1.5rem; padding: 20px 15px; font-family: inherit !important; font-weight: 400 !important; line-height: 1; }
+    .megaMenu li:not(:first-of-type) strong  { border-top: 1px solid #E2E8EE; }
+    .megaMenu li.parent.open  { overflow: visible; }
+    .megaMenu li:first-child  { background: none; }
+    .megaMenu li a  { padding: 20px 15px; line-height: 1em; border-top: 1px solid #E2E8EE; }
+    .megaMenu.open > li > a  { padding: 20px 15px; line-height: 1em; border-top-color: #E2E8EE; border-bottom: none; }
+    .megaMenu.open > li:first-child > a  { border: none; }
+    .megaMenu li.parent > span, .megaMenu li.open.parent > span  { top: 6px; width: 44px; height: 44px; right: 1.5rem; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-right.svg') no-repeat center center; }
+    .megaMenu li > section  { position: fixed; top: 0; height: 0; width: 100%; max-height: calc(100vh - (60px + 128px + 85px)); left: 100%; padding-bottom: 80px; box-sizing: border-box; visibility: hidden; z-index: 1; transition: all 0.3s ease; }
+    .megaMenu li.open > section  { left: 0; height: auto; overflow: auto; overflow-x: hidden; visibility: visible; }
+    .megaMenu li.open > section.active  { left: -100%; overflow: visible; }
+        .megaMenu li.open > section.active li.open > section  { left: 100%; }
+        .megaMenu li.open > section > ul > li > a  { padding: 20px 15px; line-height: inherit; }
+    .megaMenu ul  { background: #fff; box-shadow: 0 10px 10px -8px #E2E8EE; -webkit-box-shadow: 0 10px 10px -8px #E2E8EE; -moz-box-shadow: 0 10px 10px -8px #E2E8EE; -ms-box-shadow: 0 10px 10px -8px #E2E8EE; -o-box-shadow: 0 10px 10px -8px #E2E8EE; }
+        .megaMenu ul li a, .megaMenu ul ul li a  { padding: 20px 15px; border-top-color: #E2E8EE; }
+        .megaMenu ul ul  { background: #fff; }
+
+.siteTabs  { position: relative; left: 0; transition: all 0.3s ease; }
+.active ~ .siteTabs  { left: -100%; }
+.siteTabsSelect  { margin: 10px 0; padding: 15px 30px; background: #fff; box-shadow: 0 2px 10px #E2E8EE; -webkit-box-shadow: 0 2px 10px #E2E8EE; -moz-box-shadow: 0 2px 10px #E2E8EE; -ms-box-shadow: 0 2px 10px #E2E8EE; -o-box-shadow: 0 2px 10px #E2E8EE; }
+#siteTabsSelect  { height: auto; font-size: inherit; background: none; border: 1px solid #E2E8EE; -webkit-appearance: menulist; }
+.siteTabsLinks  { margin: 10px 0; padding: 15px 30px; list-style: none; background: #fff; box-shadow: 0 2px 10px #E2E8EE; -webkit-box-shadow: 0 2px 10px #E2E8EE; -moz-box-shadow: 0 2px 10px #E2E8EE; -ms-box-shadow: 0 2px 10px #E2E8EE; -o-box-shadow: 0 2px 10px #E2E8EE; }
+
+.megaMenu .viewall  { position: relative; border-top: 1px solid #E2E8EE; border-bottom: 1px solid #E2E8EE; z-index: 1; }
+.megaMenu .back  { position: relative; padding-left: 36px; color: #333333; font-weight: 700; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-left.svg') #fff no-repeat 15px center; background-size: 7px 12px; border-top: none; border-bottom: 1px solid #E2E8EE; overflow: visible; -webkit-background-size: 7px 12px; -moz-background-size: 7px 12px; -ms-background-size: 7px 12px; -o-background-size: 7px 12px; }
+    .megaMenu .back:before  { content: ""; position: absolute; top: 0; left: 50%; height: 100%; width: 100vw; margin-left: -50vw; background: #fff; z-index: -1; }
+
+.headerCta  { position: absolute; display: flex; align-items: center; justify-content: space-around; bottom: 0; left: 0; right: 0; height: 85px; background: #fff; box-shadow: 0 0 1rem rgba(0,0,0,0.1); z-index: 1; transform: translateY(100%); transition: transform 0.3s ease; -webkit-box-shadow: 0 0 1rem rgba(0,0,0,0.1); -moz-box-shadow: 0 0 1rem rgba(0,0,0,0.1); -ms-box-shadow: 0 0 1rem rgba(0,0,0,0.1); -o-box-shadow: 0 0 1rem rgba(0,0,0,0.1); -webkit-transform: translateY(100%); -moz-transform: translateY(100%); -ms-transform: translateY(100%); -o-transform: translateY(100%); -webkit-transition: -webkit-transform 0.3s ease; -moz-transition: -moz-transform 0.3s ease; -ms-transition: -ms-transform 0.3s ease; --webkit-transform-transiti-webkit-transformn: transf-webkit-transformrm 0.3s ease; }
+.open .headerCta  { transform: translateY(0); transition: transform 0.3s ease 0.3s; -webkit-transform: translateY(0); -moz-transform: translateY(0); -ms-transform: translateY(0); -o-transform: translateY(0); -webkit-transition: -webkit-transform 0.3s ease 0.3s; -moz-transition: -moz-transform 0.3s ease 0.3s; -ms-transition: -ms-transform 0.3s ease 0.3s; --webkit-transform-transiti-webkit-transformn: transf-webkit-transformrm 0.3s ease 0.3s; }
+.headerCta-link  { display: block; width: 33%; padding: 20px 15px; color: inherit; font-size: 0.8rem; line-height: 1; text-align: center; }
+    .headerCta-link i  { color: inherit; font-weight: 700; font-size: 1.5rem; }
+    .headerCta-link span  { display: block; }
+    .headerCta-link:hover, .headerCta-link:focus  { text-decoration: none !important; }
+
+
+
+#footer  { text-align: center; box-sizing: border-box; }
+
+.backToTop  { position: fixed; display: block; bottom: -50px; right: 15px; width: 50px; height: 50px; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-backToTop.svg') #8230DF no-repeat center center; background-size: 20px auto; border-radius: 50%; box-shadow: 0 0 8px rgba(0,0,0,0.3); opacity: 0; cursor: pointer; z-index: 99999; transition: all .5s ease; -webkit-background-size: 20px auto; -moz-background-size: 20px auto; -ms-background-size: 20px auto; -o-background-size: 20px auto; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.3); -moz-box-shadow: 0 0 8px rgba(0,0,0,0.3); -ms-box-shadow: 0 0 8px rgba(0,0,0,0.3); -o-box-shadow: 0 0 8px rgba(0,0,0,0.3); }
+    .backToTop.active  { bottom: 15px; opacity: 1; }
+
+#topFooter  { padding: 45px 0 75px 0; border-top: 1px solid #E2E8EE; }
+.topFooter__columns  { padding: 0 20px; box-sizing: border-box; }
+.topFooter__column:not(.topFooter__social):nth-of-type(1n + 2)  { margin-top: 30px; }
+.topFooter__column-icon  { display: inline-block; margin-bottom: 10px; font-size: 1.5rem; font-weight: 700; *display: inline; zoom: 1; }
+.topFooter__column-heading  { display: block; margin: 0.75rem 0 0.6rem 0; font-size: 0.975rem; line-height: 1.1; }
+.topFooter__column-text  { display: block; margin-bottom: 0.5rem; }
+.topFooter__column-link  { display: block; color: inherit; font-weight: 700; text-decoration: underline; }
+.topFooter__social  { margin: 10px 0 1rem 0; }
+    .topFooter__social a  { padding: 0; color: inherit; font-size: 1.5rem; }
+        .topFooter__social a:nth-child(1n + 2)  { margin-left: 1rem; }
+
+#bottomFooter  { padding: 20px 0; border-top: 1px solid #E2E8EE; }
+.footerLinks  { margin-bottom: 1rem; font-size: 13px; }
+    .footerLinks li  { margin: 0 0.75rem 0.75rem 0.75rem; padding: 0; border: none; }
+    .footerLinks a  { color: inherit; }
+
+#legalFooter  { background-color: #F6F7FC; padding: 15px; font-size: .875rem; text-align: right; }
+
+
+
+/* Templates & Pages
+************************/
+/* Homepage */
+#tileMain  { padding: 0 15px 30px 15px; display: flex; justify-content: center; flex-wrap: wrap; background-color: #fff; }
+
+
+
+/* Modules
+*************************/
+/* Accordion */
+.accordion  { margin: 10px 0 15px 0; list-style: none; padding-left: 0; padding-left: 10px; padding-right: 10px; }
+.accordian > li  { position: relative; margin: 10px; }
+.accordion > li > header  { font-weight: normal; font-size: 1.5rem; line-height: 1.2rem; border-bottom: 2px solid #D6D6D6; line-height: 1.5em; position: relative; padding-bottom: 1em; padding-right: 25px; }
+    .accordion > li > header:after  { content: ""; display: block; height: 100%; width: 20px; position: absolute; right: 0; top: 0; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/chevron-down-grey-24px.svg') no-repeat right 0 center; min-height: 20px; transition: all .25s ease-in-out; pointer-events: none; background-size: 20px auto; -webkit-background-size: 20px auto; -moz-background-size: 20px auto; -ms-background-size: 20px auto; -o-background-size: 20px auto; }
+.accordion > li.open > header:after  { content: ""; display: block; height: 100%; width: 20px; position: absolute; right: 0; top: 0; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/chevron-down-red-24px.svg') no-repeat right 0 center; min-height: 20px; transition: all .25s ease-in-out; pointer-events: none; background-size: 20px auto; -webkit-background-size: 20px auto; -moz-background-size: 20px auto; -ms-background-size: 20px auto; -o-background-size: 20px auto; }
+.accordion > li > header:focus  { text-decoration: none; }
+.accordion > li.open > header  { font-weight: 700; color: #ED0722; border-bottom: 2px solid #ED0722; }
+.accordion > li > article  { font-weight: normal; }
+    .accordion > li > article ul  { margin-top: 15px; }
+
+
+/* Product Application CTA */
+.productApplicationCTA  { margin: 0; padding: 75px 0 90px 0; border: none; }
+    .productApplicationCTA h4  { margin: 0; }
+    .productApplicationCTA .download  { font-weight: 700; }
+    .productApplicationCTA .icon-icon_download  { margin-left: 0.5rem; font-size: 1.25rem; }
+.productApplicationCTA__item:not(:last-of-type)  { margin-bottom: 1rem; }
+.productApplicationCTA__itemColumnTwo  { margin: 1rem 0 2rem 0; }
+
+
+/* Ribbon */
+.ribbon  { padding: 0; background-color: #fff; }
+.ribbons  { width: 100%; position: relative; }
+    .ribbons > ul  { position: relative; display: flex; width: 100vw; margin: 0; padding: 0; overflow: hidden; }
+        .ribbons > ul.ribbons__tabs  { width: 100%; box-shadow: 0 2px 10px 0 rgba(0,40,80,0.07); box-sizing: border-box; overflow: auto; -webkit-box-shadow: 0 2px 10px 0 rgba(0,40,80,0.07); -moz-box-shadow: 0 2px 10px 0 rgba(0,40,80,0.07); -ms-box-shadow: 0 2px 10px 0 rgba(0,40,80,0.07); -o-box-shadow: 0 2px 10px 0 rgba(0,40,80,0.07); }
+        .ribbons > ul > li  { display: block; margin: 0; padding: 0; list-style-type: none; }
+        .ribbons > ul.ribbons__content > li  { flex: 0 0 auto; width: 100%; }
+        .ribbons > ul > li > header  { margin: 0 1rem; cursor: pointer; z-index: 100; }
+            .ribbons > ul > li > header > span  { position: relative; display: block; padding: 1rem 0; color: transparent; font-size: 15px; letter-spacing: -0.2px; line-height: 1em; white-space: nowrap; border-bottom: 2px solid transparent; z-index: 10; }
+        .ribbons > ul > li.selected > header > span  { border-color: #ED0722; }
+        .ribbons > ul > li > header > span:after  { content: attr(data-text); position: absolute; display: flex; justify-content: center; top: 0; left: 0; width: 100%; height: 100%; padding: inherit; color: #333333; white-space: nowrap; box-sizing: border-box; transition: all 0.3s; }
+        .ribbons > ul > li:hover > header > span:after, .ribbons > ul > li:focus > header > span:after  { font-weight: 700; }
+        .ribbons > ul > li.selected > header > span:after  { font-weight: 700; }
+        .ribbons > ul > li > section  { display: block; width: 100%; margin-top: 60px; padding: 0 15px; box-sizing: border-box; }
+.contentColumn  { margin: 0 0 2rem 0; }
+
+
+/* Rotator */
+.rotator  { position: relative; margin: 0; height: 100%; background: #fff; z-index: 1; }
+    .rotator > ul  { display: flex; font-size: inherit; white-space: normal; }
+        .rotator > ul.pauseEffects  { transition: none; }
+        .rotator > ul > li  { flex: 0 0 auto; position: relative; display: block; width: 100%; height: 100%; margin: 0; padding: 0; list-style-type: none; white-space: normal; vertical-align: top; background-color: transparent; box-sizing: border-box; transition: margin-left ease-out 0.5s; }
+        .rotator > ul li a  { display: inline; width: auto; }
+
+    .rotator .slide > div  { padding: 70px 45px 70px 45px; color: #fff; text-align: center; }
+    .rotator h2  { color: inherit; font-size: 46px; line-height: 1em; letter-spacing: -0.03em; }
+    .rotator h3  { font-size: 16px; line-height: 1.5em; }
+    .rotator p, .rotator h3  { margin: 15px 0; }
+    .rotator .btn  { display: inline-flex; margin-top: 20px; padding: 1rem 3rem; }
+
+    .rotator > nav  { position: absolute; bottom: 15px; left: 0; width: 100%; height: 32px; padding: 0; text-align: center; background: none; border: none; }
+.rotator > nav ul  { display: inline-block; margin: 0; padding: 0; list-style: none; *display: inline; zoom: 1; }
+.rotator > nav li  { display: inline-block; margin: 0 3px; padding: 0; list-style: none; *display: inline; zoom: 1; }
+.rotator > nav a  { text-indent: -9000px; display: block; width: 12px; height: 12px; margin: 0; padding: 0; list-style: none; font-size: 0px; line-height: 0px; background-color: #898989; border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; }
+.rotator > nav li.selected a  { background-color: #ED0722; }
+.rotator .next, .rotator .prev  { display: none; }
+.rotator .pause, .rotator .resume  { display: none; }
+.rotator > ul > li > *  { white-space: normal; max-height: 100%; }
+
+
+/* Search Result */
+.s--term  { margin: 0 -15px 30px -15px; padding: 45px 15px; background: #eee; }
+.s--term-copy  { display: block; font-size: 1rem; }
+.s--term strong  { display: block; color: inherit; font-size: 1.5rem; }
+
+.searchResults  { margin: 0 auto; }
+
+
+/* Split Collapsible */
+.splitCollapsible  { font-weight: normal; position: relative; margin: 5px 0 10px 0; border: none; border-bottom: 1px solid #D6D6D6; padding: 5px 10px; background-color: #fff; border-radius: 0; box-shadow: none; border-bottom: none; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; }
+    .splitCollapsible:after  { content: ""; display: block; height: 3em; width: 3em; position: absolute; right: 0; top: 0; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/chevron-down-grey-24px.svg') no-repeat right 1.5em center; background-size: 1.5em auto; min-height: 1.5em; transition: all .25s ease-in-out; pointer-events: none; -webkit-background-size: 1.5em auto; -moz-background-size: 1.5em auto; -ms-background-size: 1.5em auto; -o-background-size: 1.5em auto; }
+    .splitCollapsible.open  { background: #fff; }
+        .splitCollapsible.open:after  { content: ""; display: block; height: 3em; width: 3em; position: absolute; right: 0; top: 0; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/chevron-down-red-24px.svg') no-repeat right 0 center; background-size: 1.5em auto; min-height: 1.5em; transition: all .25s ease-in-out; pointer-events: none; transform: rotate(-180deg); -webkit-background-size: 1.5em auto; -moz-background-size: 1.5em auto; -ms-background-size: 1.5em auto; -o-background-size: 1.5em auto; -webkit-transform: rotate(-180deg); -moz-transform: rotate(-180deg); -ms-transform: rotate(-180deg); -o-transform: rotate(-180deg); }
+    .splitCollapsible:hover  { background-color: #fff; }
+    .splitCollapsible > h2:first-child  { font-family: Scotia-Headline; font-weight: normal; background: #fff; border-bottom: 2px solid #D6D6D6; padding: 8px 40px 25px 0; text-decoration: none; color: #333333; }
+    .splitCollapsible.open > h2:first-child  { font-weight: bold; background: #fff; border-bottom: 2px solid #ED0722; color: #ED0722; }
+    .splitCollapsible div:last-of-type  { margin-top: 0; margin-bottom: 0; }
+    .splitCollapsible.open div:last-of-type  { margin-top: 1.5em; margin-bottom: 1em; }
+    .splitCollapsible ~ .splitCollapsible  { border-top: none; }
+
+
+/* Tabbed Content */
+.tabbedContent  { padding-right: 1em; padding-left: 1em; }
+    .tabbedContent hr  { border: 0; background: #E2E8EE; height: 1px; }
+    .tabbedContent h2, .tabbedContent h3  { font-weight: bold; font-size: 1em; line-height: 1.2em; color: #333333; margin-bottom: .25em; }
+    .tabbedContent p  { color: #333333; }
+    .tabbedContent > ul  { list-style: none; padding: 2px 10px; margin: 10px -20px; background-color: #fff; }
+        .tabbedContent > ul > li  { margin: 10px 0; background-color: #fff; padding: 10px; }
+    .tabbedContent article  { margin-top: 15px; }
+    .tabbedContent > ul > li > h2  { font-size: 16px; background: url('') no-repeat right 0px; background-position-x: right; background-position-y: 0px; margin: 0 -10px 0 0; height: 20px; }
+    .tabbedContent > li > a  { color: #ED0722; text-decoration: none; text-align: center; font-size: 16px; line-height: 37px; padding: 0px 10px; }
+    .tabbedContent > ul > li.selected > a  { color: #666666; font-weight: bold; }
+    .tabbedContent > ul ul  { margin: 0; padding: 0; }
+        .tabbedContent > ul ul ul li  { margin: 0; padding: 4px 0 4px 20px; background: none; background: none; list-style-type: disc; }
+        .tabbedContent > ul ul > li, .tabbedContent > ul ul li  { background: none; background: none; list-style-type: disc; }
+    .tabbedContent > ul > li.selected h1  { background-position: right bottom; }
+    .tabbedContent > ul > li.selected > *  { display: block; }
+    .tabbedContent > ul > li > h2  { font-size: 16px; line-height: 1em; font-weight: bold; color: #757575; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/chevron-down-grey-24px.svg') no-repeat right 0px; margin: 0 10px 0 0; height: 24px; border-bottom: 1px solid #D6D6D6; padding-bottom: 1em; }
+    .tabbedContent > ul > li.selected > h2  { font-weight: bold; color: #ED0722; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/chevron-down-red-24px.svg') no-repeat right 0px; border-bottom: 1px solid #ED0722; }
+    .tabbedContent ul > li .splitCollapsible  { margin: 0px 2px; }
+    .tabbedContent ul > li h1 + .splitCollapsible  { margin-top: 15px; }
+    .tabbedContent ul > li .splitCollapsible .splitCollapsible  { margin: 5px 0 0 0; }
+.productApplicationCTA  { border-top: none; }
+    .productApplicationCTA h2  { line-height: 1.3em; }
+    .productApplicationCTA > article ul > li > article  { width: 100%; float: none; }
+    .productApplicationCTA > article > ul > li:first-child  { border-bottom: none; }
+
+
+/* Tile */
+.tile  { position: relative; background-color: #fff; border: 1px solid #D6D6D6; margin: 1rem 0; padding: 20px 20px 80px 20px; font-size: 0.833em; box-sizing: border-box; }
+    .tile .bgImage  { position: relative; height: 100%; margin: -10px -10px 0 -10px; padding: 10px 10px 40px 10px; background-position: center center; background-repeat: no-repeat; background-size: cover; overflow: hidden; -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; }
+    .tile h3  { font-size: 20px; font-weight: bold; margin: 20px 0; }
+    .tile h4  { margin: 0 0 20px 0; font-size: 1.834em; font-weight: normal; }
+    .tile h5  { color: #515151; font-size: 1.5em; font-weight: normal; }
+
+#content-body .tile p  { margin: 1em 0; }
+#content-body .tile .btn  { position: absolute; bottom: 21px; left: 20px; }
+#content-body .tile .bgImage .btn  { bottom: 11px; left: 10px; }
+#content-body .tile .btn:hover  { top: inherit; bottom: 20px; }
+#content-body .tile .bgImage .btn:hover  { bottom: 10px; }
+#content-body .tile .btn:nth-of-type(2)  { left: inherit; right: 20px; }
+#content-body .tile .bgImage .btn:nth-of-type(2)  { right: 10px; }
+
+.tile.map .googleMap div  { background: initial; }
+.tile.map h4  { font-size: 1.5em; }
+.tile.map h5  { margin: 15px 0 0 0; color: #515151; font-size: 1.25em; font-weight: bold; }
+.tile.map section  { font-size: 1.25em; }
+.tile.map > footer  { position: absolute; bottom: 20px; left: 20px; right: 20px; }
+
+#content-body .tile.map .btn  { bottom: 1px; left: 0; }
+    #content-body .tile.map .btn:hover  { bottom: 0; }
+    #content-body .tile.map .btn + a  { position: absolute; bottom: 18px; right: 0; width: 50%; margin-right: -5px; font-size: 1.25em; text-align: right; transform: translateY(50%); -webkit-transform: translateY(50%); -moz-transform: translateY(50%); -ms-transform: translateY(50%); -o-transform: translateY(50%); }
+
+.tile.map .noLocations  { display: none; }
+
+
+/* Tile Generic - Home + Arrow Redesign */
+.tile.generic  { padding: 0; border: 1px solid #eee; border-radius: 4px; box-sizing: content-box; width: 100%; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; }
+    .tile.generic:hover  { transition: ease .25s; box-shadow: 0 2px 50px 0 #E2E8EE; -webkit-box-shadow: 0 2px 50px 0 #E2E8EE; -moz-box-shadow: 0 2px 50px 0 #E2E8EE; -ms-box-shadow: 0 2px 50px 0 #E2E8EE; -o-box-shadow: 0 2px 50px 0 #E2E8EE; }
+    .tile.generic > *  { display: block; padding-right: 20px; padding-left: 20px; }
+    .tile.generic > img, .tile.generic picture > img  { object-fit: cover; width: 100%; height: auto; display: block; padding-right: 0; padding-left: 0; overflow: hidden; }
+    .tile.generic picture  { display: block; padding-right: 0; padding-left: 0; overflow: hidden; border-top-right-radius: 4px; border-top-left-radius: 4px; max-height: 200px; -webkit-border-top-right-radius: 4px; -moz-border-top-right-radius: 4px; -ms-border-top-right-radius: 4px; -o-border-top-right-radius: 4px; -webkit-border-top-left-radius: 4px; -moz-border-top-left-radius: 4px; -ms-border-top-left-radius: 4px; -o-border-top-left-radius: 4px; }
+    .tile.generic h3, .tile.generic h4, .tile.generic h5, .tile.generic h3 a, .tile.generic h4 a, .tile.generic h5 a, .tile.generic strong  { font-weight: 700; color: #333333; font-size: 1rem; line-height: 1.2rem; height: auto; margin: 25px 0 5px 0; }
+    .tile.generic ul  { margin-left: 0; padding-left: 2.5em; }
+    .tile.generic h5 + p  { margin-top: 0; }
+    .tile.generic p  { margin-bottom: 1em; }
+    .tile.generic a:hover  { text-decoration: none; }
+
+/* Styling home tiles */
+.tile  { box-shadow: 0 2px 10px 0 #E2E8EE; -webkit-box-shadow: 0 2px 10px 0 #E2E8EE; -moz-box-shadow: 0 2px 10px 0 #E2E8EE; -ms-box-shadow: 0 2px 10px 0 #E2E8EE; -o-box-shadow: 0 2px 10px 0 #E2E8EE; }
+    .tile p, .tile ul, .tile a  { font-size: 1rem; line-height: 1.3rem; margin-top: .2em; margin-bottom: .2em; }
+    .tile .bttn__arrow  { position: relative; min-height: 44px; min-width: 44px; padding: 0; margin: 0; }
+        .tile .bttn__arrow:after  { content: ""; display: block; position: absolute; left: 0; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-right-red-link.svg') no-repeat left center; background-size: 1.5em auto; min-height: 100%; width: 100%; transition: all .25s ease-in-out; -webkit-background-size: 1.5em auto; -moz-background-size: 1.5em auto; -ms-background-size: 1.5em auto; -o-background-size: 1.5em auto; }
+        .tile .bttn__arrow:hover:after, .tile .bttn__arrow:focus:after  { background-position-x: 0.5em; }
+
+
+    /* Tile Credit */
+    .tile .pc--inner--container  { display: flex; flex-direction: column; justify-content: flex-start; height: 100%; padding-right: 0; padding-left: 0; border: 1px solid #D6D6D6; }
+.pc--header  { border-bottom: 1px solid #D6D6D6; min-height: 200px; }
+.pc--image  { width: 70%; height: auto; margin: .5em auto; display: block; }
+.tile .pc--title, .tile .pc--title a  { text-align: center; font-size: 1.25rem; line-height: 1.4rem; font-weight: 500; padding-left: 20px; padding-right: 20px; color: #333333; text-decoration: none; padding-bottom: 1em; }
+    .tile .pc--title a:hover  { text-decoration: none; }
+    .tile .pc--title sup  { font-size: .5em; }
+.pc--body  { padding-left: 20px; padding-right: 20px; flex-grow: 1; text-align: center; background: none; padding-bottom: 1em; }
+.pc--tags  { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; margin-top: -15px; }
+.pc--tag  { margin: .1em; border: 1px solid #D6D6D6; display: inline-block; background: #fff; padding: .5em 1em; font-size: .7em; text-transform: uppercase; font-weight: 700; line-height: 1; color: #757575; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: .3em; *display: inline; zoom: 1; -webkit-border-radius: .3em; -moz-border-radius: .3em; -ms-border-radius: .3em; -o-border-radius: .3em; }
+    .pc--tag.special  { color: #fff; border: 1px solid #bc267a; background: #bc267a; }
+.pc--subtitle  { text-align: center; }
+.pc--footer  { padding-left: 20px; padding-right: 20px; margin-bottom: 20px; margin-top: auto; }
+.pc--cta  { color: #fff; background-color: #ED0722; border-color: #ED0722; display: inline-block; font-weight: normal; text-align: center; white-space: nowrap; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: .75em 0; font-size: 1rem; line-height: 1.25; transition: all .3s ease; width: 100%; text-decoration: none; border-radius: .3em; cursor: pointer; text-decoration: none; margin-bottom: 1em; *display: inline; zoom: 1; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; -webkit-border-radius: .3em; -moz-border-radius: .3em; -ms-border-radius: .3em; -o-border-radius: .3em; }
+a.pc--cta:hover, a.pc--cta:focus  { color: #fff; background-color: #ad0000; border-color: #ad0000; text-decoration: none; }
+a.pc--cta:focus  { box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075),0 0 0 3px rgba(237,7,34,0.5); -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075),0 0 0 3px rgba(237,7,34,0.5); -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075),0 0 0 3px rgba(237,7,34,0.5); -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075),0 0 0 3px rgba(237,7,34,0.5); -o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075),0 0 0 3px rgba(237,7,34,0.5); }
+
+
+
+/* Repossessions (SB Colombia Legacy Forms)
+**********************************/
+/* Contact Form */
+.contactForm fieldset  { margin: 0; padding: 60px 0; }
+    .contactForm fieldset label, .contactForm fieldset div.radio  { width: 90%; margin: 0 auto 20px 0; text-align: left; }
+    .contactForm fieldset label span:first-of-type  { font-weight: 700; }
+    .contactForm fieldset label input:not([type='checkbox']):not([type='radio']), .contactForm fieldset label select  { width: 100%; padding: 0; }
+    .contactForm fieldset label .validation, .reposessionContactForm.contactForm .helpRequiredLabel .validation  { top: auto; bottom: 0.5em; right: -30px; }
+.reposessionContactForm.contactForm form > div:last-of-type  { margin: 0 0 60px 0; }
+    .reposessionContactForm.contactForm form > div:last-of-type input  { margin: 0; }
+.contactForm .button  { position: relative; display: inline-block; padding: 15px 30px; color: #fff; font-size: 16px; font-weight: 700; line-height: 1.5em; background: #ED0722; border: 1px solid transparent; border-radius: 8px; box-sizing: border-box; box-shadow: none; cursor: pointer; *display: inline; zoom: 1; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; }
+    .contactForm .button:hover, .contactForm .button:focus  { color: #fff; text-decoration: none !important; background: #CB061D; }
+.reposessionContactForm.contactForm fieldset label  { width: 100%; }
+.reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong  { overflow: hidden; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong input  { line-height: normal; }
+        .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong input[type="checkbox"]  { position: absolute; top: -2em; left: -2em; z-index: -1; }
+        .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong input:not([type="checkbox"]):not([type="radio"])  { display: block; width: 100%; line-height: 40px; padding: 2px 0 1px 0; font-weight: 400; background: transparent; border: none; border-bottom: 1px solid #757575; box-sizing: border-box; -webkit-appearance: none; }
+            .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong input:not([type="checkbox"]):not([type="radio"]):focus  { padding-bottom: 0; border-color: #8230DF; border-bottom-width: 2px; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"] ~ span:not(.validation)  { position: relative; display: inline-block; min-height: 28px; padding: 2px 0 0 2.5em; font-weight: 400; *display: inline; zoom: 1; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"]:focus ~ span:not(.validation)  { color: #8230DF; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"] ~ span:not(.validation):before  { content: ""; position: absolute; top: 0; left: 0; width: 26px; height: 26px; margin: 2px 0 0 2px; color: #ED0722; font-family: "Segoe UI Symbol"; font-size: 18px; line-height: 24px; text-align: center; vertical-align: bottom; background: #fff; border: 1px solid #757575; box-sizing: border-box; cursor: pointer; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"]:checked ~ span:not(.validation):before  { border-color: #8230DF; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"]:focus ~ span:not(.validation):before  { border-color: #8230DF; box-shadow: 0 0 0 2px #8230DF; -webkit-box-shadow: 0 0 0 2px #8230DF; -moz-box-shadow: 0 0 0 2px #8230DF; -ms-box-shadow: 0 0 0 2px #8230DF; -o-box-shadow: 0 0 0 2px #8230DF; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"] ~ span:not(.validation):before  { border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; -o-border-radius: 6px; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"]:checked ~ span:not(.validation):before  { content: ""; color: #fff; background: #8230DF; background-image: url("//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/icon-checkmark-white.svg"); background-repeat: no-repeat; background-position-x: center; background-position-y: center; background-size: inherit; width: 26px; height: 26px; margin: 2px 0 0 2px; border: 1px solid #757575; box-sizing: border-box; -webkit-background-size: inherit; -moz-background-size: inherit; -ms-background-size: inherit; -o-background-size: inherit; }
+
+
+/* Repossession Details - Lightbox */
+#lightBox .close  { content: ""; transform: rotate(0deg); z-index: 99; padding: 0px 2px; height: 18px; width: 18px; padding: 0; margin-right: .25em; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); }
+    #lightBox .close:after  { content: ""; padding: 0; background-color: none; border-radius: 0; color: #fff; transform: rotate(0deg); display: block; width: 100%; height: 100%; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/modal-exit-grey.svg') no-repeat center center; background-size: 18px 18px; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); -webkit-background-size: 18px 18px; -moz-background-size: 18px 18px; -ms-background-size: 18px 18px; -o-background-size: 18px 18px; }
+.lightBoxImage a  { border: 1px solid rgba(255,255,255,0); }
+    .lightBoxImage a:hover  { background-color: #fff; }
+.lightBoxImage .prev > img, .lightBoxImage .next > img  { display: none; }
+.lightBoxImage .prev  { position: absolute; }
+    .lightBoxImage .prev:before  { content: ""; display: block; height: 24px; width: 24px; background-image: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-right-dark.svg'); background-repeat: no-repeat; background-position-x: right; background-position-y: top; background-color: #fff; transform: rotate(0deg); box-sizing: border-box; margin-right: auto; margin-left: auto; transform: rotate(180deg); margin-left: 15px; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg); }
+.lightBoxImage .next  { position: absolute; }
+    .lightBoxImage .next:before  { content: ""; display: block; height: 24px; width: 24px; background-image: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-right-dark.svg'); background-repeat: no-repeat; background-position-x: right; background-position-y: top; background-color: #fff; transform: rotate(0deg); box-sizing: border-box; margin-right: auto; margin-left: auto; margin-right: 15px; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); }
+
+
+/* Search */
+#propertySearch form  { overflow: hidden; }
+#RepoSearchBox  { padding: 15px 0 30px 0; background: none; border: none; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; }
+#propertySearch label, #minPrice, #currentMin  { margin-left: 0; }
+#assetType, #cityLabel  { width: 100%; margin: 0 0 20px 0; background: none !important; }
+#currentMingroup, #currentMaxgroup  { margin: 0 0 20px 0; }
+#propertySearch input.button  { position: relative; display: inline-block; padding: 15px 30px; color: #fff; font-size: 16px; font-weight: 700; line-height: 1.5em; background: #ED0722; border: 1px solid transparent; border-radius: 8px; box-sizing: border-box; box-shadow: none; cursor: pointer; *display: inline; zoom: 1; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; }
+    #propertySearch input.button:hover, #propertySearch input.button:focus  { color: #fff; text-decoration: none !important; background: #CB061D; }
+
+
+/* Search - Breadcrumb */
+.property__breadcrumb ol.breadcrumb  { margin-left: -15px; padding: 0px; list-style: none; }
+    .property__breadcrumb ol.breadcrumb li  { display: inline; font-size: inherit; } /* Display list items side by side */
+        .property__breadcrumb ol.breadcrumb li + li:before  { padding: 8px; color: black; content: "/\00a0"; } /* Add a slash symbol (/) before/behind each list item */
+.property__breadcrumb ol.breadcrumb  { margin-left: 0; }
+    .property__breadcrumb ol.breadcrumb li  { font-size: 1em; line-height: 1.2em; }
+
+
+/* Search Results - Listing */
+#results  { background-color: #fff; border: none; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; }
+#propertySearch #results > section  { border: none; border-bottom: 1px solid #E2E8EE; margin-top: 1em; margin-bottom: 1em; }
+#propertySearch #results ul li  { color: #333333 !important; }
+#results li  { padding: 5px 0; margin: 0; }
+
+
+/* Search Results - Details */
+#propertyDetails  { float: none; }
+    #propertyDetails .featuredProperty  { background-color: #fff; margin: 20px 0; padding: 0; }
+    #propertyDetails #listingGallery  { margin-bottom: 30px; }

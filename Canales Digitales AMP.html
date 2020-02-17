@@ -1,0 +1,724 @@
+<!doctype html>
+<html AMP>
+	<head>
+		<!--AMP-->
+		<meta charset="utf-8">
+		<script async src="https://cdn.ampproject.org/v0.js"></script>
+		<link rel="canonical" href="https://amp.dev/es/documentation/guides-and-tutorials/start/create/basic_markup/">
+		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+		
+		<!--bootstrap-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/mailing/shutterstock_512992921.jpg" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		
+		<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+		<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+		<script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+		<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+	</head>
+
+	<style>
+		//body{ font-size:1.2vw; }
+		
+		@media (max-width: 1140px) {
+			.rotator .slide > div  { padding: 0 15px; }
+		}
+		
+		@media (max-width: 1070px) {
+			html  { zoom: 0.8; }
+		}
+		
+		@media (max-width: 800px) {
+			html  { zoom: 0.7; }
+		}
+		
+		@media (max-width: 768px) {
+			html  { zoom: 1; }
+		}
+		
+		@media (max-width: 576px) {
+			html  { zoom: 0.7; }
+			#divhead{
+				margin-left: 15% !important;
+			}
+		}
+		
+		@media (min-width:601px){
+			.img-background { 
+				background-image:url('https://scotiabankfiles.azureedge.net/scotiabank-colombia/scotiabank-colpatria/imagenes/canales/banner-app-registro-new-brand.jpg'); 
+				background-repeat:no-repeat;
+				background-position:center;
+				background-width: 100%;
+			}
+			
+			.text_style {
+				color: #333; font-size: 30px;
+				line-height: 1.4em;
+				padding-left: 55%;
+				padding-top: 10%;
+				text-align:left;
+			}
+
+			.boton_align{
+				margin-left: 55% !important;
+				margin-top: 5% !important;
+				margin-bottom: 20% !important;
+			}
+		}
+		
+		@media (max-width:600px){
+		
+			.text_style {
+				color: #333; font-size: 25px;
+				line-height: 1.4em;
+				padding-left: 10%;
+				padding-top: 10%;
+				text-align:left;
+			}
+			
+			.boton_align{
+				margin-left: 10% !important;
+				margin-top: 5% !important;
+				margin-bottom: 20% !important;
+			}
+		}
+
+		//@media screen and (min-width:1600px) {
+		//	body{ font-size: 18px; }
+		//}
+
+		//@media screen and (max-width:575px) {
+		//	body{ font-size: 10px; }
+		//}
+	
+		.button {
+		  background-color: #FFFFFF;
+		  border: 1px solid;
+		  border-color:white;
+		  color: black;
+		  padding: 18px 20px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		  border-radius: 30px;
+		  font-size:18px
+		  font-family: Frutiger;
+		}
+		
+		.button2 {
+		  background-color: #ED0722;
+		  border: 1px solid;
+		  border-color:#ED0722;
+		  color: white;
+		  padding: 18px 20px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		  border-radius: 10px;
+		  font-size:18px
+		  font-family: Frutiger;
+		}
+		
+		
+		
+		#boton.button:hover {
+		  background-color: #F2609E;
+		  color: white;
+		}
+		
+		#boton.h4:hover {
+			color: white;
+		}
+		
+		#boton1.button:hover {
+		  background-color: #EC111A;
+		  color: white;
+		}
+		
+		#boton1.h4:hover {
+			color: white;
+		}
+		
+		#boton2.button:hover {
+		  background-color: #138468;
+		  color: white;
+		}
+		
+		#boton2.h4:hover {
+			color: white;
+		}
+		
+		#boton3.button:hover {
+		  background-color: white;
+		  color: red;
+		}
+		
+		#boton3.h4:hover {
+			color: white;
+		}
+		
+		.whiteFont{
+			text-align: left;
+			color:#FFFFFF;
+			font-size:18px
+		}
+		
+		font{
+			font-size:18px
+		}
+		
+		#image{
+			margin-top:20%;
+			margin-bottom:20%;
+			margin-left:10%;
+			margin-right:10%;
+		}
+		gridP{
+			font-size:12px
+		}
+		
+		.title{
+			font-size:70px;
+		}
+		
+		.itemList{
+			color: #fff; list-style-type: circle; 
+			display: list-item; font-size: 24px; 
+			letter-spacing: -0.01em;
+		}
+		
+	</style>
+
+	<body>		
+		<!-- banner APP-->
+		<div align="center">
+			<div class="row">
+				<div style="background-color:#F2609E;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div id="divhead" style="margin-top: 20% !important;" class="row">
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"></div>
+						<div style="text-align: left;" class="col-lg-8 col-md-8 col-sm-6 col-xs-4">
+							<font class="whiteFont">
+								<h1>Nuestra App</h1><br>
+								<b>Usarla será aún más sencillo y por eso<br>
+								te invitamos a vivir nuevas experiencias<br>
+								que creamos pensando en ti.</b>
+							</font>
+						</div>
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"></div>
+					</div>
+					<div style="margin-top: 5% !important;margin-bottom: 5% !important;" class="row">
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-0"></div>
+						<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<button id="boton" style="min-width:200px;" class="button"><font><b>Descargar</b></font></button>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<button id="boton" style="min-width:200px;" class="button"><font><b>Conoce más</b></font></button>
+								</div>
+							</div>
+						</div>
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-0"></div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<amp-img 
+						height="625" 
+						width="756" 
+						layout="responsive" 
+						src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Captura.PNG">
+					</amp-img>
+				</div>
+			</div>
+		</div>
+		<!-- Fin banner APP-->
+		
+		<!-- Grid APP-->
+		<div align="center">
+			<div id="grid" class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<br><br><h1>En nuestra App podrás realizar:</h1><br><br>
+				</div>
+			</div>
+		</div>
+		<div align="center">
+			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+					&nbsp;
+			</div>
+			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+				<div id="grid" class="row">
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<amp-img 
+									height="120" 
+									width="120"  
+									src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/consulta.svg">
+								</amp-img>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Consulta tus productos</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP">Consultas de información más relevante de tus<br> 
+								productos.*
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/app">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<amp-img 
+								height="120" 
+								width="120" 
+								src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Pago.png">
+							</amp-img>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Pago de productos</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Pagos de servicios públicos desde Cuenta de<br> 
+								Ahorros o Tarjeta de Crédito.
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/web/debito-automatico">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<amp-img 
+								height="120" 
+								width="120"  
+								src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Pago servicios.svg">
+							</amp-img>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Pago de productos</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Consultas, pagos de Tarjeta de Crédito y pagos con<br>
+								Cuenta de Ahorros.<br>
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/web/debito-automatico">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<amp-img 
+								height="120" 
+								width="120" 
+								src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Extractos.svg">
+							</amp-img>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Consulta de extractos</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Consultas y descargas de extractos de Tarjeta<br>
+								de Crédito y Cuenta de Ahorros.<br>
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/web/extractos">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-e4 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<amp-img 
+								height="120" 
+								width="120" 
+								src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Apertura.svg">
+							</amp-img>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Apertura de productos</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Apertura de Cuentas de Ahorro y Tarjeta de<br> 
+								Crédito.<br>
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/app">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<amp-img 
+								height="120" 
+								width="120" 
+								src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Recarga.svg">
+							</amp-img>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Recargas celulares</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Recargas a celulares Tigo, Movistar y Claro.<br>
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/app">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+					&nbsp;
+				</div>
+			</div>
+		</div>
+		<!-- Fin Grid APP-->
+		
+		<!-- Banner Banca virtual-->
+		<div align="center">
+			<div class="row">
+				<div style="background-color:#EC111A;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div id="divhead" style="margin-top: 20% !important;" class="row">
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"></div>
+						<div style="text-align: left;" class="col-lg-8 col-md-8 col-sm-6 col-xs-4">
+							<font class="whiteFont">
+								<h1>Banca Virtual</h1><br>
+								<b>Nos transformamos para que tu vida financiera sea una
+								experiencia digital, fácil y segura.</b>
+							</font>
+						</div>
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"></div>
+					</div>
+					<div style="margin-top: 5% !important;margin-bottom: 5% !important;" class="row">
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-0"></div>
+						<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<button id="boton1" style="min-width:200px;" class="button"><font><b>Ingresar</b></font></button>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<button id="boton1" style="min-width:200px;" class="button"><font><b>Conoce más</b></font></button>
+								</div>
+							</div>
+						</div>
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-0"></div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<amp-img 
+						height="625" 
+						width="756" 
+						layout="responsive" 
+						src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Laptop.png">
+					</amp-img>
+				</div>
+			</div>
+		</div>
+		<!-- Fin Banner Banca virtual-->
+		
+		
+		
+		<!-- Grid Banca virtual-->
+		<div align="center">
+			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+					&nbsp;
+			</div>
+			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+				<div id="grid" class="row">
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<amp-img 
+									height="120" 
+									width="120" 
+									src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/consulta.svg">
+								</amp-img>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Consulta tus productos</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Consultas de información más relevante de tus<br> 
+								productos.*<br>
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/app">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<amp-img 
+								height="120" 
+								width="120" 
+								src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Pago.png">
+							</amp-img>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Pago de productos</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Pagos de servicios públicos desde Cuenta de<br> 
+								Ahorros o Tarjeta de Crédito.
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/web/debito-automatico">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<amp-img 
+								height="120" 
+								width="120"  
+								src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Pago servicios.svg">
+							</amp-img>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Pago de productos</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Consultas, pagos de Tarjeta de Crédito y pagos con<br>
+								Cuenta de Ahorros.<br>
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/web/debito-automatico">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<amp-img 
+								height="120" 
+								width="120" 
+								src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Extractos.svg">
+							</amp-img>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Consulta de extractos</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Consultas y descargas de extractos de Tarjeta<br>
+								de Crédito y Cuenta de Ahorros.<br>
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/web/extractos">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-e4 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<amp-img 
+								height="120" 
+								width="120" 
+								src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Apertura.svg">
+							</amp-img>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Apertura de productos</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Apertura de Cuentas de Ahorro y Tarjeta de<br> 
+								Crédito.<br>
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/app">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<amp-img 
+								height="120" 
+								width="120" 
+								src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Recarga.svg">
+							</amp-img>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h5>Recargas celulares</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="gridP"><br>Recargas a celulares Tigo, Movistar y Claro.<br>
+								<a href="https://www.scotiabankcolpatria.com/canales-digitales/app">Ver más</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+					&nbsp;
+				</div>
+			</div>
+		</div>
+		<!-- Fin Grid Banca virtual-->
+		
+		<!-- Banner PSE-->
+		<div align="center">
+			<div class="row">
+				<div style="background-color:#009DD6;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div id="divhead" style="margin-top: 20% !important;" class="row">
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"></div>
+						<div style="text-align: left;" class="col-lg-8 col-md-8 col-sm-6 col-xs-4">
+							<font class="whiteFont">
+								<h1 class="title"><a style="color:#ffffff;" href="https://www.scotiabankcolpatria.com/personas/servicios/pagos/pagos-en-linea-pse" >PSE</a></h1><br>
+								<ul style="height:10%">
+									<li class="itemList">Pagos de servicios públicos</li>
+									<li class="itemList">Pagos de tus productos (créditos)</li>
+									<li class="itemList">Ahorro de tiempo al realizar el pago<br>
+									desde tu casa u oficina.</li>
+								</ul>
+							</font>
+						</div>
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"></div>
+					</div>
+				</div>
+				<div style="background-color:#009DD6;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<amp-img 
+						height="780" 
+						width="949" 
+						layout="responsive" 
+						src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Captura2.PNG">
+					</amp-img>
+				</div>
+			</div>
+		</div>
+		<!-- Fin Banner PSE-->
+		
+		<!-- Banner Activa Banca Virtual-->
+		<div style="width:100%;" class="img-background" class="row">
+			<br><br>
+			<div  align="center">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h2 class="text_style">
+							Queremos saber si ya eres cliente de<br> 
+							Scotiabank Colpatria <br>
+							para activar tu Banca Virtual.
+						</h2>
+					</div>
+				</div>
+				<div class="boton_align" style="" class="row">
+					<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<button id="boton3" style="min-width:200px;" class="button2"><font><b>Conoce más</b></font></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br><br><br>
+		</div>
+		<!-- Fin Banner Activa Banca Virtual-->
+		
+		<!-- Banner Extracto-->
+		<div align="center">
+			<div class="row">
+				<div style="background-color:#138468;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div id="divhead" style="margin-top: 20% !important;" class="row">
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"></div>
+						<div style="text-align: left;" class="col-lg-8 col-md-8 col-sm-6 col-xs-4">
+							<font class="whiteFont">
+								<h1 class="title">Tu extracto</h1><br>
+								<b>Conoce como visualizar tu extracto digital.</b>
+							</font>
+						</div>
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"></div>
+					</div>
+					<div style="margin-top: 5% !important;margin-bottom: 5% !important;" class="row">
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-0"></div>
+						<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<button id="boton2" style="min-width:200px;" class="button"><font><b>Conoce más</b></font></button>
+								</div>
+							</div>
+						</div>
+						<div align="center" style="text-align: center;" class="col-lg-2 col-md-2 col-sm-3 col-xs-0"></div>
+					</div>
+				</div>
+				<div style="background-color:#138468;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<amp-img 
+						height="781" 
+						width="947" 
+						layout="responsive" 
+						src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/cortes-mail/prueba-amp/Captura3.PNG">
+					</amp-img>
+				</div>
+			</div>
+		</div>
+		<!--Fin Banner Extracto-->
+		
+		<!--Carrusel videos-->
+		<div align="center">
+			<div id="grid" class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<br><br><h1>¿Cómo ingreso a mi Banca Virtual Scotiabank Colpatria?</h1><br><br>
+				</div>
+			</div>
+		</div>
+		<div align="center">
+			<div id="grid" class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<amp-carousel
+					width="800"
+					height="600"
+					layout="fixed"
+					type="slides">
+						<amp-youtube
+							data-videoid="nWS7OSONMfE"
+							layout="responsive"
+							width="860" height="420"
+							autoplay>
+						</amp-youtube>
+						<amp-youtube
+							data-videoid="__4TjWBB37E"
+							layout="responsive"
+							width="860" height="420"
+							autoplay>
+						</amp-youtube>
+						<amp-youtube
+							data-videoid="Xlo4uxtrJ9E"
+							layout="responsive"
+							width="860" height="420"
+							autoplay>
+						</amp-youtube>
+				  </amp-carousel>
+				</div>
+			</div>
+		</div>
+		<!--Fin Carrusel videos-->
+	</body>
+</html>

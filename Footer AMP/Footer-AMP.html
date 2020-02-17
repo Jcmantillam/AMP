@@ -1,0 +1,654 @@
+<!doctype html>
+<html amp lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Footer</title>
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+        <!--Carrusel-->
+        <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+
+        <!--Youtube-->
+        <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
+        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+        <!--Canonica-->
+        <link rel="canonical" href="./regular-html-version.html" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style amp-custom>
+            
+            /*Styles Header*/
+           *{
+                box-sizing: border-box;
+            }
+
+            html{
+                margin: 0;
+            }
+
+            @media (max-width: 3840px) {
+                html  { zoom: 2; }
+
+                .column{
+                    float: left;
+                    width: 25%;
+                    padding: 5px;
+                    vertical-align: middle;
+                }
+
+                .columnR{
+                    float: right;
+                    width: 10%;
+                    padding: 5px;
+                    vertical-align: middle;
+                }
+
+                .columnR_2{
+                    float: right;
+                    width: 20%;
+                    padding: 5px;
+                    vertical-align: middle;
+                }
+
+                .column1{
+                    float: left;
+                    width: 25%;
+                    padding: 5px;
+                    height: 60px;
+                    vertical-align: middle;
+                }
+
+                .column2{
+                    display: none;
+                }
+
+                .column3{
+                    float: left;
+                    width: 15%;
+                    padding: 5px;
+                    vertical-align: middle;
+                }
+            }
+
+            @media (max-width: 2350px) {
+                html  { zoom: 1.8; }
+            }
+
+            @media (max-width: 2070px) {
+                html  { zoom: 1.6; }
+            }
+
+            @media (max-width: 1920px) {
+                html  { zoom: 1.2; }
+                .rotator .slide > div  { padding: 0 15px; }
+            }
+            
+            @media (max-width: 1300px) {
+                html  { zoom: 1; }
+            }
+            @media (max-width: 1170px) {
+                html  { zoom: 0.9; }
+            }
+            
+            @media (max-width: 1100px) {
+                html  { zoom: 0.8; }
+            }
+
+            @media (max-width: 950px) {
+                html  { zoom: 0.7; }
+            }
+            
+            @media (max-width: 768px) {
+                html  { zoom: 0.5; }
+                
+                .column{
+                    float: left;
+                    width: 25%;
+                    padding: 5px;
+                    vertical-align: middle;
+                }
+
+                .column1{
+                    display: none;
+                }
+
+                .outer{
+                    display: none;
+                }
+                
+                .inner{
+                    display: none;
+                }
+
+                .column2{
+                    display: block;
+                    float: left;
+                    width: 10%;
+                    padding: 5px;
+                    vertical-align: middle;
+                }
+            }
+
+            @media (max-width: 600px) {
+                html  { zoom: 1; }
+                .desktop{
+                    display: none;
+                }
+
+                .itemBanner1{
+                    color: #ffffff;
+                    font-size: 20px; 
+                    letter-spacing: -0.01em;
+                    font-family: Frutiger;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                html  { zoom: 0.8; }
+                #divhead{
+                    margin-left: 15% ;
+                }
+            }
+
+            @media (min-width:601px){
+
+                .mobile{
+                    display: none;
+                }
+                
+                .img-background { 
+                    background-image:url('https://scotiabankfiles.azureedge.net/scotiabank-colombia/scotiabank-colpatria/imagenes/canales/banner-app-registro-new-brand.jpg'); 
+                    background-repeat:no-repeat;
+                    background-position:center;
+                    background-width: 100%;
+                }
+                
+                .text_style {
+                    color: #333; font-size: 30px;
+                    line-height: 1.4em;
+                    padding-left: 55%;
+                    padding-top: 10%;
+                    text-align:left;
+                }
+
+                .boton_align{
+                    margin-left: 55%;
+                    margin-top: 5%;
+                    margin-bottom: 20%;
+                }
+
+                
+            }
+            
+            @media (max-width:600px){
+
+                .column-33{
+                    float: left;
+                    width: 33.33%;
+                    padding: 5px;
+                    height: 104px;
+                    vertical-align: middle;
+                }
+
+                .column-25{
+                    float: left;
+                    width: 25%;
+                    padding: 5px;
+                    vertical-align: middle;
+                }
+
+                .img-background { 
+                    background-image:url('https://scotiabankfiles.azureedge.net/scotiabank-colombia/scotiabank-colpatria/imagenes/canales/banner-app-registro-new-brand.jpg'); 
+                    background-repeat:no-repeat;
+                    background-position:center;
+                    background-width: 100%;
+                }
+            
+                .text_style {
+                    color: #333; font-size: 25px;
+                    line-height: 1.4em;
+                    padding-left: 10%;
+                    padding-top: 10%;
+                    text-align:left;
+                }
+                
+                .boton_align{
+                    margin-left: 10%;
+                    margin-top: 5% ;
+                    margin-bottom: 20% ;
+                }
+            }
+
+            .title1{
+                color: #ffffff;
+            }
+
+            .top{
+                padding-top: 30%;
+            }
+
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+                width: 100%;
+                display: flex;
+            }
+
+            [class*="col-"] {
+                float: left;
+                padding: 10px;
+            }
+
+            /* For mobile phones: */
+            [class*="col-"] {
+                width: 100%;
+            }
+
+            @media only screen and (min-width: 600px) {
+                /* For tablets: */
+                .col-s-1 {width: 8.33%; display: table-cell;}
+                .col-s-2 {width: 16.66%; display: table-cell;}
+                .col-s-3 {width: 25%; display: table-cell;}
+                .col-s-4 {width: 33.33%; display: table-cell;}
+                .col-s-5 {width: 41.66%; display: table-cell;}
+                .col-s-6 {width: 50%; display: table-cell;}
+                .col-s-7 {width: 58.33%; display: table-cell;}
+                .col-s-8 {width: 66.66%; display: table-cell;}
+                .col-s-9 {width: 75%; display: table-cell;}
+                .col-s-10 {width: 83.33%; display: table-cell;}
+                .col-s-11 {width: 91.66%; display: table-cell;}
+                .col-s-12 {width: 100%; display: table-cell;}
+                .col-s-20 {width: 20%; display: table-cell;}
+            }
+
+            @media only screen and (min-width: 768px) {
+                /* For desktop: */
+                .col-1 {width: 8.33%; display: table-cell;}
+                .col-2 {width: 16.66%; display: table-cell;}
+                .col-3 {width: 25%; display: table-cell;}
+                .col-4 {width: 33.33%; display: table-cell;}
+                .col-5 {width: 41.66%; display: table-cell;}
+                .col-6 {width: 50%; display: table-cell;}
+                .col-7 {width: 58.33%; display: table-cell;}
+                .col-8 {width: 66.66%; display: table-cell;}
+                .col-9 {width: 75%; display: table-cell;}
+                .col-10 {width: 83.33%; display: table-cell;}
+                .col-11 {width: 91.66%; display: table-cell;}
+                .col-12 {width: 100%; display: table-cell;}
+                .col-77 {width: 14.279%; display: table-cell;}
+                .col-20 {width: 20%; display: table-cell;}
+            }
+
+            h3{
+                text-align: center;
+            }
+
+            div.grid{
+                padding: 0px;
+            }
+
+            #siteHeader  { padding-top: 0; padding-bottom: 0; }
+
+            ul {
+                list-style-type: none;
+                margin-right: 5%;
+                margin-left: 5%;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #FAFBFD;
+            }
+
+            li {
+                float: left;
+            }
+
+            li:last-child {
+                border-right: none;
+            }
+
+            li a {
+                display: block;
+                color: black;
+                text-align: center;
+                font-size: 13px;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            a {
+                color: black;
+                text-decoration: none;
+            }
+
+            #no-style{
+                color: white;
+                text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+                text-decoration: underline;
+            }
+
+            .active {
+                background-color: #EEEEEE;
+            }
+
+            .pull-right{
+                float: right;
+            }
+
+            .firstLine{
+                margin-top: 0;
+                margin-bottom: 0;
+                vertical-align: top;
+                padding: 0;
+                background-color: #FAFBFD;
+            }
+            
+            .logoHeader{
+                margin-top: 0;
+                margin-bottom: 0;
+                border-top: 0.5px solid #D6D6D6;
+                border-bottom: 0.5px solid #D6D6D6;
+                align-items: center;
+            }
+
+            header{
+                margin: 0;
+            }
+
+            .subtitle{
+                text-align: center;
+                margin-top: 0;
+                margin-bottom: 0;
+            }            
+
+            .searchForm  { 
+                position: relative;  
+                width: 17rem; 
+                height: 50px; 
+                margin-left: 30px; 
+                margin-right: auto; 
+            }
+
+            .txtSearch  { 
+                position: relative; 
+                width: 80%; 
+                height: 100%; min-height: 40px; 
+                padding: 0 48px 0 15px; 
+                color: #757575; 
+                text-align: left; 
+                background-color: #fff; 
+                border: 1px solid #E2E8EE; 
+                border-radius: .4rem; 
+                box-sizing: border-box; 
+                z-index: 10; 
+                transition: all 0.3s ease 0.05s;
+                -webkit-border-radius: .4rem; 
+                -moz-border-radius: .4rem; 
+                -ms-border-radius: .4rem; 
+                -o-border-radius: .4rem; 
+            }
+            
+            .searchButton  { 
+                position: absolute; 
+                display: block; top: 0; 
+                right: 0; 
+                width: 80px; 
+                height: 100%; 
+                padding: 14px; 
+                background: none; 
+                border: none; 
+                box-sizing: border-box;
+                cursor: pointer; 
+                z-index: 20; 
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                background-color: #ED0722;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #ED0722;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                padding: 10px 10px;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            a.white{
+                color: #ffffff;
+            }
+            .inner{
+                flex-basis: 0;
+                -ms-flex-preferred-size: 0;
+                -webkit-box-flex: 1;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+            }
+            .outer {
+                display: flex;
+                flex-wrap: wrap;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+
+            #botonHeader.button:hover {
+                background-color: #A6000E;
+                color: white;
+            }
+
+            .button {
+                background-color: #ED0722;
+                width: 100%;
+                border: 1px solid;
+                border-color:white;
+                color: white;
+                padding: 10px 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 30px;
+            }
+
+            /*Slide bar styles*/
+            html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;margin:0;outline:0;padding:0;vertical-align:baseline}*,:before,:after{box-sizing:inherit}
+            html{box-sizing:border-box;margin:0;height:100%}
+            body{margin:0;background-color:#f9f9f9;font-family: 'Montserrat', sans-serif;color:#333;font-style:normal;height:100%;font-weight:500}
+            a:link{color:#333;text-decoration:none;font-weight:600}
+            a:visited{color:#333;text-decoration:none}
+            a:hover{color:#333;text-decoration:none}
+            amp-img{max-width:100%;height:auto}
+            /* Header & Footer CSS */
+            #WPHeader {z-index:180;padding-top: 5px;padding-bottom: 7px;margin:0;width:100%;z-index:180;box-shadow:0 1px 2px rgba(0,0,0,0.14);background-image: linear-gradient(to right, #2980b9, #2c3e50 );}
+            #WPHeader amp-img {margin-top: 7px;margin-bottom: 0px;margin-left: 10px;text-align:center;width: 148px;height: 45px}
+            #WPHeader button {background:transparent;border-radius: 3px;border:2px solid rgba(0,0,0,0.14);cursor:pointer;outline:none;margin-right: 15px;margin-left: -10px;float: right;margin-top: 7px;padding-left: 3px;padding-right: 3px;padding-top: 3px}
+            #WPFooter{color:#fff;font-size:16px;margin:0;left:0;bottom:0;width:100%;z-index:180;font-weight:600;text-shadow:1px 1px 1px rgba(0,0,0,.3);text-align:center;padding-top: 15px;padding-bottom: 15px;background-image: linear-gradient(to right, #2980b9, #2c3e50 );}
+            #copyrightHolder{margin-top: 15px;font-size: 12px;text-transform: uppercase;}	
+                
+            /* Main Content CSS */
+            main {min-height:100%;margin:0 auto;padding:0;z-index:176;max-width:1100px;padding-top:40px;padding-bottom:40px;display: grid;grid-template-columns: repeat(12, 1fr);grid-template-rows: auto auto auto;grid-gap:10px;}
+            article {grid-column: span 4;background:#fff;-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.14);box-shadow:0 1px 2px rgba(0,0,0,0.14);padding-left: 15px;padding-right: 15px;padding-top: 15px;padding-bottom: 15px;}
+            article:hover{-webkit-box-shadow:0 1px 16px rgba(0,0,0,0.14);box-shadow:0 1px 16px rgba(0,0,0,0.14);}
+            article h1,article h2,article h3,article h4,article h5,article h6{font-size:24px;line-height:26px;display:block;font-weight:600;margin-bottom:10px;color:#333;letter-spacing:-1px}
+            article p,article q,aside p,aside q{font-size:17px;font-weight:500;line-height:24px;margin-top:5px;margin-bottom:25px;display:block}
+            article header figure{margin-left:-15px;margin-right:-15px;margin-top: -15px;margin-bottom:15px;max-height:300px;overflow:hidden;z-index: 1}
+            article header figure amp-img{position:relative;width:100%;}
+            article header figcaption{border:0;clip:rect(0 0 0 0);height:1px;overflow:hidden;position:absolute;width:1px}	
+            article header ul,article footer ul{margin: 0;margin-bottom:10px;margin-top:10px}
+            article header li,article footer li{display: inline;color:#555;font-size:14px;text-transform:uppercase;font-weight:600;}
+            
+            /* Sidebar CSS */
+            amp-sidebar{background:#fff;color:#333;font-size:2rem;padding:0px 0 0;width:10rem;-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.14);box-shadow:0 1px 2px rgba(0,0,0,0.14);}
+            amp-sidebar h2,amp-sidebar h3,amp-sidebar h4,amp-sidebar h5{background-color: #f9f9f9;color:#333;font-size:22px;padding-left: 15px;padding-right: 15px;padding-bottom: 7px;padding-top: 10px;font-weight:600;display: block;}
+            amp-sidebar ul{list-style:none;margin:0;padding:0}
+            amp-sidebar li{font-size:16px;border-top: 1px solid #eee;padding-left: 15px;padding-right: 15px;padding-top: 5px;padding-bottom: 5px}
+            amp-sidebar li a{display: block;font-weight: 400;}
+            amp-sidebar li:last-child{border-bottom: 1px solid #eee;padding-bottom: 5px}
+            amp-sidebar::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);border-radius: 3px;background-color: #F5F5F5;}
+            amp-sidebar::-webkit-scrollbar{width: 3px;background-color: #F5F5F5;}
+            amp-sidebar::-webkit-scrollbar-thumb{-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);background-color: #F5F5F5;}
+            
+            @media (max-width: 1024px) {
+            main {padding-left:15px;padding-right:15px;padding-bottom:15px;padding-top: 15px;grid-gap:10px;}
+            article {grid-column: span 4;}}
+            @media (max-width: 800px) {
+            main {padding-left:15px;padding-right:15px;padding-bottom:15px;padding-top: 15px;grid-gap:10px;}
+            article {grid-column: span 6;}}
+            @media (max-width: 767px) {
+            article {grid-column: span 12;}}
+            
+            /*Styles Footer*/
+            #siteFooter  { padding-top: 45px; padding-bottom: 45px; border-top: 0.5px solid #D6D6D6;
+                border-bottom: 0.5px solid #D6D6D6; }
+
+        </style>
+    </head>
+
+    <body>     
+        <footer id="siteFooter">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="row">
+                        <div align="center" class="col-3 col-s-6">
+                            <amp-img
+                                alt="Soluciones"
+                                src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/amp-web/homeicon.PNG"
+                                width="25"
+                                height="25"
+                            >
+                            </amp-img>
+                            <p>
+                                <b>¡Explora nuestros productos!</b>
+                            </p>
+                            <p>
+                                Más soluciones para ti.
+                            </p>
+                            <p>
+                                <b><a href="">Más soluciones para ti.</a></b>
+                            </p>
+                        </div>
+                        <div align="center" class="col-3 col-s-6">
+                            <amp-img
+                                alt="Soluciones"
+                                src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/amp-web/phoneicon.PNG"
+                                width="25"
+                                height="25"
+                            >
+                            </amp-img>
+                            <p>
+                                <b>¡Explora nuestros productos!</b>
+                            </p>
+                            <p>
+                                Línea de Atención : Btá.<br>
+                                (1)7561616 -018000522222
+                            </p>
+                            <p>
+                                <b><a href="">Encuentra tu ciudad aquí.</a></b>
+                            </p>
+                        </div>
+                        <div align="center" class="col-3 col-s-6">
+                            <amp-img
+                                alt="Preguntas"
+                                src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/amp-web/gpsicon.PNG"
+                                width="25"
+                                height="25"
+                            >
+                            </amp-img>
+                            <p>
+                                <b>¿Alguna duda?</b>
+                            </p>
+                            <p>
+                                ¡Tenemos las respuestas!
+                            </p>
+                            <p>
+                                <b><a href="">Entra al centro de ayuda</a></b>
+                            </p>
+                        </div>
+                        <div align="center" class="col-3 col-s-12">
+                            <div class="row">
+                                <div class="col-20 col-s-20">
+                                    <br>
+                                    <a href="">
+                                        <amp-img
+                                            alt="Facebook"
+                                            src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/amp-web/Facebook.jfif"
+                                            width="25"
+                                            height="25"
+                                        >
+                                        </amp-img>
+                                    </a>
+                                </div>
+                                <div class="col-20 col-s-20">
+                                    <br>
+                                    <a href="">
+                                        <amp-img
+                                            alt="Twitter"
+                                            src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/amp-web/Twitter.png"
+                                            width="25"
+                                            height="25"
+                                        >
+                                        </amp-img>
+                                    </a>
+                                </div>
+                                <div class="col-20 col-s-20">
+                                    <br>
+                                    <a href="">
+                                        <amp-img
+                                            alt="Youtube"
+                                            src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/amp-web/youtube.png"
+                                            width="25"
+                                            height="25"
+                                        >
+                                        </amp-img>
+                                    </a>
+                                </div>
+                                <div class="col-20 col-s-20">
+                                    <br>
+                                    <a href="">
+                                        <amp-img
+                                            alt="LinkedIn"
+                                            src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/amp-web/Linkedin.png"
+                                            width="25"
+                                            height="25"
+                                        >
+                                        </amp-img>
+                                    </a>
+                                </div>
+                                <div class="col-20 col-s-20">
+                                    <br>
+                                    <a href="">
+                                        <amp-img
+                                            alt="Instagram"
+                                            src="https://scotiabankfiles.azureedge.net/scotiabank-colombia/Colpatria/amp-web/instagram.png"
+                                            width="25"
+                                            height="25"
+                                        >
+                                        </amp-img>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </footer>
+    </body>
+</html>

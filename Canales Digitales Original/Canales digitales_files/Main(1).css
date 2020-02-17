@@ -1,0 +1,533 @@
+@font-face  { font-family: 'Scotia-Headline'; src: url('/Fonts/Scotia_W_Headline.woff') format('woff'), url('/Fonts/Scotia_W_Headline.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+@font-face  { font-family: 'Scotia'; src: url('/Fonts/Scotia_W_Rg.woff') format('woff'), url('/Fonts/Scotia_W_Rg.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face  { font-family: 'Scotia'; src: url('/Fonts/Scotia_W_Lt.woff') format('woff'), url('/Fonts/Scotia_W_Lt.woff2') format('woff2'); font-weight: 300; font-style: normal; }
+@font-face  { font-family: 'Scotia'; src: url('/Fonts/Scotia_W_Bd.woff') format('woff'), url('/Fonts/Scotia_W_Bd.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+@font-face  { font-family: 'Frutiger'; src: url('/Fonts/Frutiger-Roman.eot'); src: url('/Fonts/Frutiger-Roman.eot?#iefix') format('embedded-opentype'), url('/Fonts/Frutiger-Roman.woff') format('woff'), url('/Fonts/Frutiger-Roman.ttf') format('truetype'), url('/Fonts/Frutiger-Roman.svg#open_sansbold') format('svg'); font-weight: 400; font-style: normal; }
+@font-face  { font-family: 'Frutiger'; src: url('/Fonts/Frutiger-Light.eot'); src: url('/Fonts/Frutiger-Light.eot?#iefix') format('embedded-opentype'),url('/Fonts/Frutiger-Light.woff') format('woff'),url('/Fonts/Frutiger-Light.ttf') format('truetype'),url('/Fonts/Frutiger-Bold.svg#Frutiger-Light') format('svg'); font-weight: 300; font-style: normal; }
+@font-face  { font-family: 'Frutiger'; src: url('/Fonts/Frutiger-Bold.eot'); src: url('/Fonts/Frutiger-Bold.eot?#iefix') format('embedded-opentype'),url('/Fonts/Frutiger-Bold.woff') format('woff'),url('/Fonts/Frutiger-Bold.ttf') format('truetype'),url('/Fonts/Frutiger-Bold.svg#Frutiger-Bold') format('svg'); font-weight: 700; font-style: normal; }
+
+:root  { --primary-brand: #ED0722; /* Red */ --primary-default: #333333; /* Dark Grey */ --primary-alternate: #757575; /* Medium Grey */ --primary-highlight: #8230DF; /* Violet */ --secondary-success: #008660; /* Green */ --secondary-notification: #BE207A; /* Fuschia */ --secondary-info: #087BB4; /* Blue */ --secondary-error: #CB061D; /* Darker Red */ --neutral-disabled: #D6D6D6; /* Light Grey */ --neutral-outline: #E2E8EE; /* Light Blue-Grey */ --background-alternate: #FAFBFD; /* Off White */ --background-section: #F6F7FC; /* Off White (Cool) */ --background-dark: #333333; /* Dark Grey */ --container-width: 1140px; }
+
+[tabindex]:focus  { text-decoration: inherit; }
+
+html  { background: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -ms-overflow-style: scrollbar; -webkit-tap-highlight-color: rgba(0,0,0,0); }
+body  { width: auto; max-width: none; color: #333333; font-size: 1rem; line-height: 1.5; font-family: Scotia, Frutiger, Arial, Helvetica, sans-serif; }
+    body > *  { padding: 0; background: none; }
+        body > * > div  { background: none; }
+
+a  { color: #8230DF; text-decoration: none; }
+    a[href^="tel:"]  { cursor: default; text-decoration: none; font-weight: 700; }
+    a:hover, a:focus  { text-decoration: underline; }
+
+hr  { background-color: #E2E8EE; }
+
+button, input, select, textarea  { font-family: inherit; font-size: inherit; line-height: normal; }
+input, select, textarea  { padding: 0; font-size: 20px; line-height: 2em; background: none; border: none; border-bottom: 1px solid #757575; }
+    input:focus, select:focus, textarea:focus  { border-bottom: 2px solid #8230DF; }
+select  { height: 2em; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/icon_chevron-purple-down.svg') no-repeat right center; -webkit-appearance: none; }
+
+h1, h2, h3, h4, h5, h6  { margin: 0; font-weight: 700; }
+h1  { margin-top: 30px; font-family: Scotia-Headline; font-size: 46px; line-height: 1.1; }
+h2  { margin: 0; font-family: Scotia-Headline; font-size: 36px; line-height: 1.1; }
+h3  { font-size: 20px; line-height: 1.1; }
+h4  { font-size: 16px; margin: 5px 0; }
+h5  { font-size: 14px; margin: 5px 0; }
+h6  { font-size: 12px; margin: 0; }
+
+img  { max-width: 100%; }
+
+small  { font-size: 0.85em; }
+
+
+
+/* Generic Styles
+**************************/
+.btn  { position: relative; display: inline-block; font-size: 16px; font-weight: 700; background: none; box-sizing: border-box; cursor: pointer; *display: inline; zoom: 1; }
+    .btn:hover, .btn:focus  { text-decoration: none !important; }
+.btn-primary, .btn-default  { padding: 15px 30px; border: 1px solid transparent; border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; }
+.btn-primary  { color: #fff; background-color: #ED0722; }
+    .btn-primary:hover, .btn-primary:focus  { background-color: #CB061D; }
+.btn-default  { color: #ED0722; border-color: #ED0722; }
+    .btn-default:hover, .btn-default:focus  { color: #fff; background-color: #CB061D; border-color: #fff; }
+
+.btn-pill  { padding: 14px 30px; border: 1px solid currentColor; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; -ms-border-radius: 50px; -o-border-radius: 50px; }
+    .btn-pill:hover, .btn-pill:focus  { padding: 14px 30px; color: #fff; border: 1px solid currentColor; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; -ms-border-radius: 50px; -o-border-radius: 50px; }
+
+.btn-card-default  { color: #8230DF; }
+    .btn-card-default:hover, .btn-card-default:focus  { background-color: #8230DF; }
+.btn-card-new  { color: #BE207A; }
+    .btn-card-new:hover, .btn-card-new:focus  { background-color: #BE207A; }
+.btn-card-help  { color: #CB061D; }
+    .btn-card-help:hover, .btn-card-help:focus  { background-color: #CB061D; }
+.btn-card-success  { color: #008660; }
+    .btn-card-success:hover, .btn-card-success:focus  { background-color: #008660; }
+.btn-card-moreinfo  { color: #087BB4; }
+    .btn-card-moreinfo:hover, .btn-card-moreinfo:focus  { background-color: #087BB4; }
+.btn-card-unselected  { color: #757575; }
+    .btn-card-unselected:hover, .btn-card-unselected:focus  { background-color: #757575; }
+
+.btn-background  { color: #333333; background: #fff; border-color: transparent; }
+    .btn-background:hover, btn-background:focus  { color: #fff; background: transparent; border-color: currentColor; }
+
+
+/* General */
+.visible-mobile  { display: none; }
+.visible-desktop  { display: block; }
+
+.col  { max-width: 1140px; width: 100%; margin: 0 auto; padding: 0 15px; box-sizing: border-box; }
+
+[class^="icon-"], [class*=" icon-"]  { color: inherit; }
+
+.wrapper  { background-image: none; padding: 0; }
+
+.page-title  { margin-top: 30px; font-family: Scotia-Headline; font-size: 46px; line-height: 1.1; }
+
+ul.checked li  { list-style-type: none; }
+    ul.checked li:before  { content: "\2713"; color: #ED0722; font-weight: bold; padding-right: 8px; }
+
+.googleMap  { width: 100%; height: 100%; }
+
+
+/* Lity - Modal Dialogue */
+.lity-inline  { background: rgba(153, 153, 153, 0.92); }
+    .lity-inline .lity-container  { position: relative; width: 100%; max-width: 600px; background: #fff; box-shadow: 0 10px 20px -10px rgba(0,0,0,0.26); transform: scale(1); opacity: 1; transition: all .3s ease; -webkit-box-shadow: 0 10px 20px -10px rgba(0,0,0,0.26); -moz-box-shadow: 0 10px 20px -10px rgba(0,0,0,0.26); -ms-box-shadow: 0 10px 20px -10px rgba(0,0,0,0.26); -o-box-shadow: 0 10px 20px -10px rgba(0,0,0,0.26); -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); }
+    .lity-inline.lity-loading .lity-container  { opacity: 0; transform: scale(0.6); -webkit-transform: scale(0.6); -moz-transform: scale(0.6); -ms-transform: scale(0.6); -o-transform: scale(0.6); }
+    .lity-inline.lity-closed .lity-container  { opacity: 0; transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1); }
+    .lity-inline .lity-content  { transform: none; transition: none; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; }
+        .lity-inline .lity-content:after  { content: none; }
+.lity-loading .lity-inline .lity-content, .lity-closed .lity-inline .lity-content  { transform: none; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; }
+.lity-inline .lity-close  { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; color: transparent; font-size: 0; text-shadow: none; }
+    .lity-inline .lity-close:before, .lity-inline .lity-close:after  { content: ""; position: absolute; display: block; top: 50%; left: 50%; height: 2px; width: 26px; background: #757575; }
+    .lity-inline .lity-close:before  { transform: translateX(-50%) rotate(-45deg); -webkit-transform: translateX(-50%) rotate(-45deg); -moz-transform: translateX(-50%) rotate(-45deg); -ms-transform: translateX(-50%) rotate(-45deg); -o-transform: translateX(-50%) rotate(-45deg); }
+    .lity-inline .lity-close:after  { transform: translateX(-50%) rotate(45deg); -webkit-transform: translateX(-50%) rotate(45deg); -moz-transform: translateX(-50%) rotate(45deg); -ms-transform: translateX(-50%) rotate(45deg); -o-transform: translateX(-50%) rotate(45deg); }
+
+.lity .dialog--header  { display: block; align-items: center; flex-flow: column nowrap; margin: 0; padding: 1.5rem 3.5rem 1.5rem 40px; font-size: 18px; font-weight: 700; line-height: 1.2; text-align: center; }
+.lity .dialog--body  { width: 100%; padding: 0 40px 20px 40px; line-height: 18px; overflow-y: auto; transition: all .3s ease .15s; -webkit-overflow-scrolling: touch; }
+
+/* Lity - Video embed based on Canada site */
+.yv--link  { position: relative; display: inline-block; background: #333333; *display: inline; zoom: 1; }
+.yv--thumbnail  { display: block; transition: opacity 0.3s ease; }
+.yv--link:hover .yv--thumbnail, .yv--link:focus .yv--thumbnail  { opacity: 0.7; }
+.yv--play  { position: absolute; display: block; right: 30px; bottom: 30px; width: 50px; height: 50px; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/icon_play.svg') no-repeat 0 0; background-size: contain; transition: all 0.3s ease; -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+.yv--link:hover .yv--play, .yv--link:focus .yv--play  { right: 60px; bottom: 60px; transform: scale(1.3); -webkit-transform: scale(1.3); -moz-transform: scale(1.3); -ms-transform: scale(1.3); -o-transform: scale(1.3); }
+
+
+
+/* Template layout
+*********************************/
+#siteHeader  { padding: 0; }
+    #siteHeader .col  { width: 100%; }
+    #siteHeader .headerIframe  { top: -8px; right: 15px; }
+    #siteHeader #siteCountryRedirect  { top: 9px; right: 90px; }
+    #siteHeader #textSizeSelect  { top: 8px; right: 10px; }
+    #siteHeader > div  { padding: 0; overflow: visible; }
+
+#top  { overflow: hidden; }
+
+.siteTabs ul  { display: flex; float: left; list-style: none; padding: 0; margin: 0; }
+.siteTabs li  { display: inline; float: left; background-color: transparent; margin: 0; padding: 0; text-align: center; font-weight: normal; }
+    .siteTabs li a  { position: relative; display: inline-block; margin: 0 1.5rem 0 0; padding: 0.56rem 0rem; color: inherit; font-size: 13px; font-weight: normal; background-color: transparent; border-radius: 0 !important; *display: inline; zoom: 1; -webkit-border-radius: 0 !important; -moz-border-radius: 0 !important; -ms-border-radius: 0 !important; -o-border-radius: 0 !important; }
+    .siteTabs li.active a  { font-weight: 700; }
+    .siteTabs li a:hover, .siteTabs li a:focus  { text-decoration: none; background: transparent; }
+    .siteTabs li a:after  { content: ''; position: absolute; height: 2px; width: 100%; left: 0; bottom: 0; transition: all 0.3s ease; }
+    .siteTabs li.active a:after  { background-color: #ED0722; }
+    .siteTabs li:not(.active) a:hover:after  { background: #D6D6D6; }
+.siteTabs .pull-right  { float: right; }
+    .siteTabs .pull-right li a  { margin: 0 0 0 1.5rem; }
+
+#top  { background: #FAFBFD; }
+
+
+#logoHeader  { background-color: #fff; padding: 0 1rem; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+    #logoHeader .col  { height: 115px; display: flex; align-items: center; justify-content: space-between; }
+/* IE11 Hack */ _:-ms-fullscreen, :root #logoHeader > .col > *  { flex: 0 0 auto; }
+#siteLogo  { float: none !important; max-width: 255px; margin: 0 !important; }
+
+.searchForm  { position: relative; bottom: inherit; right: inherit; width: 17rem; height: 50px; margin-left: 30px; margin-right: auto; }
+.txtSearch  { position: relative; width: 100%; height: 100%; min-height: 40px; padding: 0 48px 0 15px; color: #757575; font-size: inherit; text-align: left; background-color: #fff; border: 1px solid #E2E8EE; border-radius: .4rem; box-sizing: border-box; z-index: 10; transition: all 0.3s ease 0.05s; -webkit-border-radius: .4rem; -moz-border-radius: .4rem; -ms-border-radius: .4rem; -o-border-radius: .4rem; }
+.searchButton  { position: absolute; display: block; top: 0; right: 0; width: 48px; height: 100%; padding: 14px; background: none; border: none; box-sizing: border-box; cursor: pointer; z-index: 20; }
+
+
+#headerCta  { display: flex; margin-left: auto; }
+.headerCta-link  { position: relative; font-size: .8rem; text-align: center; display: inline-block; color: inherit; line-height: 1; *display: inline; zoom: 1; }
+    .headerCta-link + .headerCta-link  { margin-left: 30px; }
+    .headerCta-link span  { display: block; margin-top: 12px; }
+    .headerCta-link i  { font-weight: bold; color: #757575; font-size: 1.5rem; }
+    .headerCta-link:hover, .headerCta-link:active  { text-decoration: none !important; }
+
+
+#newSignIn  { margin-left: 30px; }
+.newSignIn-dropDown  { position: relative; z-index: 100; }
+
+.newSignIn-link  { position: relative; display: flex; align-items: center; justify-content: center; height: 55px; min-width: 200px; padding: 0 2.5rem; color: #fff; font-size: 0.75rem; background: #ED0722 no-repeat 15px center; background-size: auto 24px; border: none; border-radius: 0.3rem; box-sizing: border-box; transition: background 0.25s ease-in, border-radius 0.5s 0s; z-index: 1; -webkit-background-size: auto 24px; -moz-background-size: auto 24px; -ms-background-size: auto 24px; -o-background-size: auto 24px; -webkit-border-radius: 0.3rem; -moz-border-radius: 0.3rem; -ms-border-radius: 0.3rem; -o-border-radius: 0.3rem; }
+    .newSignIn-link:after  { content: ""; position: absolute; width: 0.8rem; height: 1rem; top: 50%; right: 1rem; margin-top: -0.5rem; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/icon_chevron-white-down.svg') no-repeat center center; background-size: contain; transform: rotate(0deg); transition: 0.25s; -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); }
+    .newSignIn-link:hover, .newSignIn-link:focus  { ; }
+
+.newSignIn-icon  { position: absolute; top: 50%; left: 1rem; width: 1rem; height: 1rem; margin-top: -0.5rem; background: no-repeat center center; background-size: contain; -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+
+.newSignIn-dropDownList  { display: block; position: absolute; top: 100%; left: 0; right: 0; height: auto; max-height: 0; margin: 0; padding: 0.25em 0 0.1em 0; color: #fff; list-style: none; background-color: #ED0722; border-radius: 0 0 0.3rem 0.3rem; box-shadow: 0 0 0.5rem #fff; transition: max-height 0.25s, visibility 0.25s 0s; overflow: auto; visibility: hidden; -webkit-border-radius: 0 0 0.3rem 0.3rem; -moz-border-radius: 0 0 0.3rem 0.3rem; -ms-border-radius: 0 0 0.3rem 0.3rem; -o-border-radius: 0 0 0.3rem 0.3rem; -webkit-box-shadow: 0 0 0.5rem #fff; -moz-box-shadow: 0 0 0.5rem #fff; -ms-box-shadow: 0 0 0.5rem #fff; -o-box-shadow: 0 0 0.5rem #fff; }
+    .newSignIn-dropDownList:before  { content: ""; position: absolute; top: 0; left: 1em; right: 1em; height: 2px; background: #fff; }
+.newSignIn-dropDownListItem  { display: block; }
+.newSignIn-dropDownListLink  { display: block; padding: 0.5em 1em; color: #fff; font-size: 0.875rem; }
+
+.newSignIn--open .newSignIn-link  { border-radius: 0.3em 0.3em 0 0; transition: background 0.3s ease-in; -webkit-border-radius: 0.3em 0.3em 0 0; -moz-border-radius: 0.3em 0.3em 0 0; -ms-border-radius: 0.3em 0.3em 0 0; -o-border-radius: 0.3em 0.3em 0 0; }
+    .newSignIn--open .newSignIn-link:after  { transform: rotate(-180deg); -webkit-transform: rotate(-180deg); -moz-transform: rotate(-180deg); -ms-transform: rotate(-180deg); -o-transform: rotate(-180deg); }
+.newSignIn--open .newSignIn-dropDownList  { max-height: calc(100vh - 200px); transition: max-height 0.25s; visibility: visible; }
+
+.newSignIn-activate  { font-size: .7rem; text-align: center; margin: 7.5px 0 0 0; }
+    .newSignIn-activate a  { color: inherit; font-weight: 700; text-decoration: underline; }
+        .newSignIn-activate a:hover, .newSignIn-activate a:focus  { color: inherit; text-decoration: none; }
+
+
+#siteNav  { margin: 0; padding: 0; border-bottom: 1px solid #eee; }
+.megaMenu  { display: flex; align-items: stretch; justify-content: space-between; height: 48px; padding: 0; background: none; }
+    .megaMenu > li  { display: block; margin-top: 0; color: inherit; }
+        .megaMenu > li:hover, .megaMenu > li:focus  { background: transparent; }
+        .megaMenu > li.parent:hover, .megaMenu > li.parent:focus  { border: none; }
+        .megaMenu > li > a  { position: relative; height: 100%; padding: 0.7rem 0 !important; color: transparent; font-size: 0.9rem; background-image: none; border: none; box-sizing: border-box; transition: text-shadow 0.1s; }
+            .megaMenu > li > a:before  { content: attr(data-overlaytext); position: absolute; display: flex; align-items: center; justify-content: center; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; padding-bottom: 3px; color: #333333; font-weight: 400; white-space: nowrap; box-sizing: border-box; transition: all .3s ease; }
+            .megaMenu > li > a:after  { content: ""; position: absolute; display: block; bottom: 0; left: 0; width: 100%; height: 2px; background: transparent; transition: all .3s ease; }
+        .megaMenu > li.parent > a  { padding: 0.7rem 0; background: none; }
+        .megaMenu > li:hover > a, .megaMenu > li:focus > a  { color: transparent !important; }
+            .megaMenu > li:hover > a:before, .megaMenu > li:focus > a:before  { font-weight: 700; }
+            .megaMenu > li:hover > a:after, .megaMenu > li:focus > a:after  { background: #ED0722; }
+        .megaMenu > li > section  { top: 100%; left: 0 !important; right: 0 !important; width: 100% !important; height: auto; margin-top: 1px; margin-right: auto; margin-left: auto; padding: 0; color: inherit; background: #fff; border-bottom: none; box-shadow: none; overflow: visible; -webkit-overflow-scrolling: touch; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; }
+            .megaMenu > li > section:before  { position: absolute; content: ''; display: block; top: 0; left: 50%; width: calc(100vw - 9px); height: 100%; margin-left: -50vw; background: #fff; box-shadow: 0 6px 20px -6px rgba(0,0,0,0.1); z-index: -1; -webkit-box-shadow: 0 6px 20px -6px rgba(0,0,0,0.1); -moz-box-shadow: 0 6px 20px -6px rgba(0,0,0,0.1); -ms-box-shadow: 0 6px 20px -6px rgba(0,0,0,0.1); -o-box-shadow: 0 6px 20px -6px rgba(0,0,0,0.1); -webkit-box-shadow: 0 6px 20px -6px rgba(0,0,0,0.1); -moz-box-shadow: 0 6px 20px -6px rgba(0,0,0,0.1); -ms-box-shadow: 0 6px 20px -6px rgba(0,0,0,0.1); -o-box-shadow: 0 6px 20px -6px rgba(0,0,0,0.1); }
+        .megaMenu > li:hover > section  { display: block; }
+        .megaMenu > li > section a  { color: #333333 !important; }
+            .megaMenu > li > section a:hover > span, .megaMenu > li > section a:focus > span  { border-bottom: 2px solid currentColor; }
+        .megaMenu > li > section strong, .megaMenu > li > section .parent > a  { display: block; height: 3.5rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+        .megaMenu > li > section > ul  { float: none; display: flex; padding: 30px 0 0 0; width: 100%; height: auto; overflow: hidden; }
+            .megaMenu > li > section > ul > li  { float: none; width: 100%; min-height: 1px; margin: 0 20px 0 0; padding: 6px 0; border-bottom: none; }
+            .megaMenu > li > section > ul li a  { display: inline-block; font-size: 0.9rem; font-weight: 400; background-image: none; box-sizing: border-box; transition: all 0.3s; *display: inline; zoom: 1; *display: inline; zoom: 1; }
+                .megaMenu > li > section > ul li a:hover, .megaMenu > li > section > ul li a:focus  { font-weight: 700; text-decoration: none; }
+        .megaMenu > li > section[data-children="2"] > ul ul, .megaMenu > li > section[data-children="3"] > ul ul  { columns: 220px; column-gap: 20px; -webkit-columns: 220px; -moz-columns: 220px; -ms-columns: 220px; -o-columns: 220px; -webkit-column-gap: 20px; -moz-column-gap: 20px; -ms-column-gap: 20px; -o-column-gap: 20px; -webkit-columns: 220px; -moz-columns: 220px; -ms-columns: 220px; -o-columns: 220px; -webkit-column-gap: 20px; -moz-column-gap: 20px; -ms-column-gap: 20px; -o-column-gap: 20px; }
+        .megaMenu > li > section > ul ul li  { display: block; }
+
+    .megaMenu .viewall  { position: relative; display: block; margin-top: 30px; padding: 1rem 0; font-size: .9rem; font-weight: bold; text-align: center; background: #FAFBFD; }
+        .megaMenu .viewall:before  { content: ""; position: absolute; display: block; top: 0; left: 50%; width: calc(100vw - 9px); height: 100%; margin-left: -50vw; background: inherit; z-index: -1; }
+
+
+.breadcrumbContainer  { padding: 12px 0; background: #FAFBFD; border-bottom: 1px solid #eee; }
+.breadcrumb  { display: flex; align-items: center; list-style: none; }
+.breadcrumb-item  { color: inherit; display: block; font-weight: bold; }
+    .breadcrumb-item + .breadcrumb-item  { position: relative; left: 5px; }
+        .breadcrumb-item + .breadcrumb-item::before  { content: ""; display: inline-block; width: 2rem; height: 10px; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-right-dark.svg') no-repeat center center; background-size: contain; *display: inline; zoom: 1; -webkit-background-size: contain; -moz-background-size: contain; -ms-background-size: contain; -o-background-size: contain; }
+    .breadcrumb-item a  { font-size: .8rem; color: inherit; }
+    .breadcrumb-item.active  { left: 10px; font-size: .8rem; font-weight: normal; cursor: default; }
+    .breadcrumb-item a:hover  { text-decoration: none; border-bottom: 1px dotted #333333; }
+
+
+#footer  { box-sizing: border-box; }
+
+.backToTop  { position: fixed; display: block; bottom: -50px; right: 30px; width: 50px; height: 50px; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-backToTop.svg') #8230DF no-repeat center center; background-size: 20px auto; border-radius: 50%; box-shadow: 0 0 8px rgba(0,0,0,0.3); opacity: 0; cursor: pointer; z-index: 1028; transition: all .5s ease; -webkit-background-size: 20px auto; -moz-background-size: 20px auto; -ms-background-size: 20px auto; -o-background-size: 20px auto; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.3); -moz-box-shadow: 0 0 8px rgba(0,0,0,0.3); -ms-box-shadow: 0 0 8px rgba(0,0,0,0.3); -o-box-shadow: 0 0 8px rgba(0,0,0,0.3); }
+    .backToTop.active  { bottom: 30px; opacity: 1; }
+
+#topFooter  { padding: 45px 0 75px 0; border-top: 1px solid #E2E8EE; }
+.topFooter__columns  { display: flex; flex-direction: row; align-items: flex-start; }
+.topFooter__column  { width: 100%; padding: 20px calc(20px + 2rem) 20px 20px; }
+.topFooter__column-icon  { display: inline-block; margin-bottom: 10px; font-size: 1.5rem; font-weight: 700; *display: inline; zoom: 1; }
+.topFooter__column-heading  { display: block; margin: 0.75rem 0 0.6rem 0; font-size: 0.975rem; line-height: 1.1; }
+.topFooter__column-text  { display: block; margin-bottom: 0.5rem; }
+.topFooter__column-link  { display: block; color: inherit; font-weight: 700; text-decoration: underline; }
+.topFooter__social  { margin: 40px 0 1rem 0; padding-right: 20px; }
+    .topFooter__social a  { padding: 0; color: inherit; font-size: 1.5rem; }
+        .topFooter__social a:nth-child(1n + 2)  { margin-left: 1rem; }
+
+#bottomFooter  { padding: 20px 0; border-top: 1px solid #E2E8EE; }
+.footerLinks  { margin-bottom: 1rem; font-size: 15px; }
+    .footerLinks li  { float: none; display: inline-block; margin: 0 1.5rem 0.75rem 0; border: none; *display: inline; zoom: 1; }
+    .footerLinks a  { padding: 0; }
+
+#legalFooter  { background-color: #F6F7FC; padding: 15px 0; font-size: .875rem; text-align: right; }
+
+
+
+/* Templates & Pages
+************************/
+/* Homepage */
+#tileMain  { padding-bottom: 30px; display: flex; justify-content: center; flex-wrap: wrap; width: 100%; max-width: 1140px; margin: 0 auto; }
+
+/* No/One Column */
+#header-content  { padding-top: 30px; padding-bottom: 30px; }
+
+
+
+/* Modules
+*************************/
+/* Accordion */
+.accordion  { font-family: Scotia, Frutiger, Arial, Helvetica, sans-serif; }
+.accordian > li  { ; }
+.accordion > li > header  { font-weight: normal; font-size: 1.5rem; border-bottom: 2px solid #D6D6D6; line-height: 2em; position: relative; padding-right: 25px; }
+    .accordion > li > header:after  { content: ""; display: block; height: 100%; width: 24px; position: absolute; right: 0; top: 0; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/chevron-down-grey-24px.svg') no-repeat right 0 center; min-height: 20px; transition: all .25s ease-in-out; pointer-events: none; background-size: 24px auto; -webkit-background-size: 24px auto; -moz-background-size: 24px auto; -ms-background-size: 24px auto; -o-background-size: 24px auto; }
+.accordion > li.open > header:after  { content: ""; display: block; height: 100%; width: 24px; position: absolute; right: 0; top: 0; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/chevron-down-red-24px.svg') no-repeat right 0 center; min-height: 20px; transition: all .25s ease-in-out; pointer-events: none; background-size: 24px auto; -webkit-background-size: 24px auto; -moz-background-size: 24px auto; -ms-background-size: 24px auto; -o-background-size: 24px auto; }
+.accordion > li > header:focus  { text-decoration: none; }
+.accordion > li.open > header  { font-weight: 700; color: #ED0722; border-bottom: 2px solid #ED0722; }
+.accordion > li > article  { font-weight: normal; }
+    .accordion > li > article ul  { margin-top: 15px; }
+
+
+/* Product Application CTA */
+.productApplicationCTA  { display: flex; margin: 0; padding: 75px 0 90px 0; border: none; }
+    .productApplicationCTA > header  { width: 25%; }
+    .productApplicationCTA > article  { width: 75%; }
+    .productApplicationCTA h4  { margin: 0; }
+    .productApplicationCTA .download  { font-weight: 700; }
+    .productApplicationCTA .icon-icon_download  { margin-left: 0.5rem; font-size: 1.25rem; }
+.productApplicationCTA__item:not(:last-of-type)  { margin-bottom: 1rem; }
+.productApplicationCTA__itemColumns  { display: flex; }
+.productApplicationCTA__itemColumnOne  { width: 75%; }
+.productApplicationCTA__itemColumnTwo  { width: 25%; text-align: right; }
+
+
+/* Ribbons */
+.ribbon  { position: relative; display: flex; background: #F6F7FC; z-index: 1; }
+.ribbonContainer  { position: relative; width: 100%; max-width: 1357px; margin: -3rem auto; padding: 2rem 0 1rem 0; background-color: #fff; box-shadow: 0 2px 10px 0 rgba(0,40,80,0.07); box-sizing: border-box; -webkit-box-shadow: 0 2px 10px 0 rgba(0,40,80,0.07); -moz-box-shadow: 0 2px 10px 0 rgba(0,40,80,0.07); -ms-box-shadow: 0 2px 10px 0 rgba(0,40,80,0.07); -o-box-shadow: 0 2px 10px 0 rgba(0,40,80,0.07); }
+.ribbons  { position: relative; width: 100%; max-width: 1140px; margin: 0 auto; }
+    .ribbons > ul  { position: relative; display: flex; margin: 0; padding: 0; overflow: hidden; line-height: 0; z-index: 100; }
+        .ribbons > ul.ribbons__tabs  { justify-content: center; }
+        .ribbons > ul > li  { display: block; padding: 0; line-height: normal; list-style-type: none; box-sizing: border-box; z-index: 100; }
+        .ribbons > ul.ribbons__content  { padding: 3rem 0; }
+            .ribbons > ul.ribbons__content > li  { flex: 0 0 auto; width: 100%; }
+        .ribbons > ul > li > header  { position: relative; box-sizing: border-box; cursor: pointer; z-index: 100; }
+        .ribbons > ul > li:nth-of-type(1n+2) > header  { margin-left: 2rem; }
+        .ribbons > ul > li > header > span  { position: relative; display: block; padding: 0 0 0.5rem 0; color: transparent; font-size: 15px; letter-spacing: -0.2px; line-height: 1em; vertical-align: middle; border-bottom: 2px solid transparent; z-index: 10; }
+        .ribbons > ul > li.selected > header > span  { border-color: #ED0722; }
+        .ribbons > ul > li > header > span:after  { content: attr(data-text); position: absolute; display: flex; justify-content: center; top: 0; left: 0; width: 100%; height: 100%; padding: inherit; color: #333333; white-space: nowrap; transition: all 0.3s; }
+        .ribbons > ul > li > header:hover > span:after, .ribbons > ul > li > header:focus > span:after  { font-weight: 700; }
+        .ribbons > ul > li.selected > header > span:after  { font-weight: 700; }
+        .ribbons > ul > li > section  { position: relative; display: flex; align-items: stretch; width: 100%; }
+
+
+/* Rotator */
+.rotator  { position: relative; width: auto; height: 625px; margin: 0; overflow: hidden; z-index: 1; }
+    .rotator .slide  { height: 100%; background: center center no-repeat; background-size: auto 100%; -webkit-background-size: auto 100%; -moz-background-size: auto 100%; -ms-background-size: auto 100%; -o-background-size: auto 100%; }
+        .rotator .slide > div  { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; top: 0; left: 0; width: 50%; height: 100%; margin: 0 50% 0 0; padding: 0 2.5% 0 calc((((100%) - 1140px) / 2) + 15px); color: #fff; box-sizing: border-box; overflow: hidden; z-index: 10; }
+            .rotator .slide > div > *  { max-width: 100%; }
+    .rotator h2  { color: inherit; font-family: Scotia-Headline; font-size: 56px; line-height: 1em; letter-spacing: -0.03em; }
+    .rotator h3  { margin: 0.6em 0 0 0; color: inherit; font-size: 20px; line-height: 1.3em; }
+    .rotator .btn  { margin-top: 20px; padding: 1rem 3rem; }
+
+    .rotator > ul  { overflow: hidden; margin: 0; margin-left: 0%; padding: 0; list-style-type: none; white-space: nowrap; width: 100%; height: 100%; font-size: 0px; }
+        .rotator > ul > li  { transition: margin-left ease-out 1s; position: relative; display: inline-block; margin: 0; padding: 0; list-style-type: none; width: 100%; height: 100%; vertical-align: top; white-space: nowrap; *display: inline; zoom: 1; }
+        .rotator > ul li a  { display: inline-block; width: auto; *display: inline; zoom: 1; }
+        .rotator > ul > li > *  { white-space: normal; height: 100%; }
+        .rotator > ul > li > a  { display: block; width: 100%; }
+            .rotator > ul > li > a > img  { position: absolute; width: 100%; height: 100%; }
+            .rotator > ul > li > a > article  { position: absolute; bottom: 50px; left: 0; padding: 5px 10px; background-color: rgba(255,255,255,0.7); width: 85%; font-size: 14px; }
+
+    .rotator > nav  { position: absolute; bottom: 0; left: 50%; height: 44px; max-width: 1140px; text-align: center; z-index: 100; transform: translateX(-50%); -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -ms-transform: translateX(-50%); -o-transform: translateX(-50%); }
+        .rotator > nav > a  { display: block; position: absolute; top: auto !important; bottom: 575px; width: 50px; height: 50px; margin: 0 15px -24px 15px; text-align: center; text-decoration: none; vertical-align: middle; background: #8230DF !important; border-radius: 50%; box-shadow: 0 0 8px rgba(0,0,0,0.3); box-sizing: border-box; transition: transform 0.3s; cursor: pointer; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.3); -moz-box-shadow: 0 0 8px rgba(0,0,0,0.3); -ms-box-shadow: 0 0 8px rgba(0,0,0,0.3); -o-box-shadow: 0 0 8px rgba(0,0,0,0.3); -webkit-transition: -webkit-transform 0.3s; -moz-transition: -moz-transform 0.3s; -ms-transition: -ms-transform 0.3s; --webkit-transform-transiti-webkit-transformn: transf-webkit-transformrm 0.3s; }
+        .rotator > nav .prev  { left: 0; }
+            .rotator > nav .prev:hover, .rotator > nav .prev:focus  { transform: translateX(-3px); -webkit-transform: translateX(-3px); -moz-transform: translateX(-3px); -ms-transform: translateX(-3px); -o-transform: translateX(-3px); }
+        .rotator > nav .next  { right: 0; }
+            .rotator > nav .next:hover, .rotator > nav .next:focus  { transform: translateX(3px); -webkit-transform: translateX(3px); -moz-transform: translateX(3px); -ms-transform: translateX(3px); -o-transform: translateX(3px); }
+        .rotator > nav a img  { display: block; width: 20px; height: 16px; margin: 17px auto; }
+        .rotator > nav ul  { list-style-type: none; padding: 0px; margin: 0px; position: relative; font-size: 0; }
+            .rotator > nav ul li  { display: inline-block; padding: 0 6px; *display: inline; zoom: 1; }
+            .rotator > nav ul a  { cursor: pointer; overflow: hidden; text-indent: -100px; background-color: #D6D6D6; height: 12px; width: 12px; display: block; text-align: center; color: #fff; }
+            .rotator > nav ul li a  { border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; }
+        .rotator > nav li.selected a  { opacity: 1; background-color: #ED0722; }
+
+
+/* Search Results page */
+.s--term  { position: absolute; left: 0; right: 0; margin-bottom: 30px; padding: 45px 0; background: #eee; }
+.s--term-copy  { display: block; font-size: 1rem; }
+.s--term strong  { display: block; color: inherit; font-size: 1.5rem; }
+
+/* Search results iframe styling */
+.searchResults  { margin-top: 200px; margin-bottom: 1em; }
+.searchResult  { border-bottom: 1px solid #eee; }
+    .searchResult:last-of-type  { border-bottom: none; }
+    .searchResult b  { font-weight: 700; }
+    .searchResult .title  { margin-top: 30px; }
+    .searchResult .body  { margin-bottom: 30px; margin-top: 10px; }
+.search-results  { font-size: 16px; font-weight: normal; }
+.search-nav  { font-family: Scotia, Frutiger, Arial, Helvetica, sans-serif; color: #333333; font-size: 1rem; font-weight: normal; }
+    .search-nav a  { color: #ED0722; }
+.search-form  { display: none; }
+.search-header-table  { display: none; }
+.search-line  { display: none; }
+.search-footer-table  { display: none; }
+.search-item-links  { color: #ED0722; font-size: 1.5rem; line-height: 2.2rem; text-decoration: none; margin-top: 30px; }
+.search-headline  { display: block; color: #333333; font-family: Scotia, Frutiger, Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5rem; font-weight: normal; }
+.search-item-links  { color: #ED0722; }
+.mobile .searchResult .body  { display: none; }
+
+
+/* Split Collapsible */
+.splitCollapsible  { font-family: Scotia, Frutiger, Arial, Helvetica, sans-serif; font-weight: normal; position: relative; margin: 5px 0 10px 0; border: none; border-bottom: 1px solid #D6D6D6; padding: 5px 10px; background-color: #fff; border-radius: 0; box-shadow: none; border-bottom: none; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; }
+    .splitCollapsible:after  { content: ""; display: block; height: 3em; width: 3em; position: absolute; right: 0; top: 0; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/chevron-down-grey-24px.svg') no-repeat right 1.5em center; background-size: 1.5em auto; min-height: 1.5em; transition: all .25s ease-in-out; pointer-events: none; -webkit-background-size: 1.5em auto; -moz-background-size: 1.5em auto; -ms-background-size: 1.5em auto; -o-background-size: 1.5em auto; }
+    .splitCollapsible.open  { background: #fff; }
+        .splitCollapsible.open:after  { content: ""; display: block; height: 3em; width: 3em; position: absolute; right: 0; top: 0; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/chevron-down-red-24px.svg') no-repeat right 0 center; background-size: 1.5em auto; min-height: 1.5em; transition: all .25s ease-in-out; pointer-events: none; transform: rotate(-180deg); -webkit-background-size: 1.5em auto; -moz-background-size: 1.5em auto; -ms-background-size: 1.5em auto; -o-background-size: 1.5em auto; -webkit-transform: rotate(-180deg); -moz-transform: rotate(-180deg); -ms-transform: rotate(-180deg); -o-transform: rotate(-180deg); }
+    .splitCollapsible:hover  { background-color: #fff; }
+    .splitCollapsible > h2:first-child  { font-family: Scotia, Frutiger, Arial, Helvetica, sans-serif; font-weight: normal; background: #fff; border-bottom: 2px solid #D6D6D6; padding: 8px 40px 25px 0; text-decoration: none; color: #333333; }
+    .splitCollapsible.open > h2:first-child  { font-weight: bold; background: #fff; border-bottom: 2px solid #ED0722; color: #ED0722; }
+    .splitCollapsible div:last-of-type  { margin-right: 4em; margin-top: 0; margin-bottom: 0; }
+    .splitCollapsible.open div:last-of-type  { margin-top: 1.5em; margin-bottom: 2em; }
+
+
+/* Tabbed Content */
+.tabbedContent  { border: 1px solid #E2E8EE; margin-top: 1em; margin-bottom: 1em; }
+    .tabbedContent h2, .tabbedContent h3  { font-weight: bold; font-size: 1em; line-height: 1.2em; color: #333333; margin-bottom: .25em; }
+    .tabbedContent ul  { list-style-image: none; list-style-type: disc; }
+    .tabbedContent p  { color: #333333; }
+    .tabbedContent nav  { border-bottom: 2px solid #E2E8EE; }
+    .tabbedContent table  { border-collapse: collapse; border: 1px solid #E2E8EE; }
+        .tabbedContent table tr  { border-bottom: 1px solid #E2E8EE; }
+    .tabbedContent nav a  { background-color: #fff; color: #757575; font-weight: bold; border-bottom: 1px solid transparent; padding: 1em .5em; }
+        .tabbedContent nav a.selected  { border: none; border-bottom: 1px solid #ED0722; font-weight: bold; color: #ED0722; }
+    .tabbedContent > ul li.selected  { background-color: #fff; padding: 30px; }
+    .tabbedContent .tabContent hr  { border: 0; background: #E2E8EE; height: 1px; }
+
+
+/* Tile Generic */
+#tileMain  { margin-top: 3em; }
+.tile.generic  { position: relative; display: inline-block; width: calc(((100%) / 3) - 30px); padding: 0 0 80px 0; margin: 15px; vertical-align: top; text-align: left; background-color: white; border: 1px solid #eee; box-sizing: border-box; *display: inline; zoom: 1; }
+#secondaryContent > .tile.generic  { padding: 1em 0; margin: 1em 12px; border: 1px solid #D6D6D6; }
+.tile.generic h3  { font-size: 20px; font-weight: bold; height: 50px; margin: 20px 0; }
+.tile.generic h4  { margin: 0 0 20px 0; font-size: 1.834em; }
+.tile.generic h5  { margin-top: 15px; margin-left: 0; margin-right: 0; color: #515151; font-size: 1.2rem; }
+    .tile.generic h5 + p  { margin-top: 0; }
+.tile.generic a  { font-size: 1em; }
+.tile.generic > p  { display: block; }
+.tile.generic .bgImage  { position: relative; height: 100%; margin: -10px -10px -50px -10px; padding: 10px 10px 50px 10px; background-position: center center; background-repeat: no-repeat; background-size: cover; overflow: hidden; -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; }
+.tile.generic .btn  { position: absolute; bottom: 21px; left: 20px; }
+    .tile.generic .btn:hover  { top: inherit; bottom: 20px; }
+    .tile.generic .btn:nth-of-type(2)  { left: inherit; right: 20px; }
+.tile.generic .bgImage .btn  { bottom: 11px; left: 10px; }
+    .tile.generic .bgImage .btn:hover  { bottom: 10px; }
+    .tile.generic .bgImage .btn:nth-of-type(2)  { right: 10px; }
+
+.tile.map h4  { font-size: 1.5em; }
+.tile.map h5  { margin: 15px 0 0 0; color: #515151; font-size: 1.25em; font-weight: bold; }
+.tile.map section  { font-size: 1.25em; }
+.tile.map .btn  { bottom: 1px; left: 0; }
+    .tile.map .btn:hover  { bottom: 0; }
+    .tile.map .btn + a  { position: absolute; bottom: 18px; right: 0; width: 51%; margin-right: -5px; font-size: 1.25em; text-align: right; transform: translateY(50%); -webkit-transform: translateY(50%); -moz-transform: translateY(50%); -ms-transform: translateY(50%); -o-transform: translateY(50%); }
+.tile.map .noLocations  { display: none; }
+.tile.map > footer  { position: absolute; bottom: 20px; left: 20px; right: 20px; }
+
+
+/* Tile Credit */
+.pc--inner--container  { display: flex; flex-direction: column; justify-content: flex-start; height: 100%; }
+.pc--header  { border-bottom: 1px solid #D6D6D6; margin-top: .2em; min-height: 250px; margin-left: -20px; margin-right: -20px; }
+.pc--image  { width: 70%; height: auto; margin: .5em auto; display: block; }
+.tile .pc--title, .tile .pc--title a  { text-align: center; font-size: 1.25rem; line-height: 1.4rem; font-weight: 500; padding-left: 20px; padding-right: 20px; color: #333333; text-decoration: none; }
+    .tile .pc--title a:hover  { text-decoration: none; }
+    .tile .pc--title sup  { font-size: .5em; }
+.pc--body  { padding-left: 20px; padding-right: 20px; flex-grow: 1; text-align: center; }
+.pc--tags  { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; margin-top: -15px; }
+.pc--tag  { margin: .1em; border: 1px solid #D6D6D6; display: inline-block; background: #fff; padding: .5em 1em; font-size: .7em; text-transform: uppercase; font-weight: 700; line-height: 1; color: #757575; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: .3em; *display: inline; zoom: 1; -webkit-border-radius: .3em; -moz-border-radius: .3em; -ms-border-radius: .3em; -o-border-radius: .3em; }
+    .pc--tag.special  { color: #fff; border: 1px solid #bc267a; background: #bc267a; }
+.pc--subtitle  { text-align: center; }
+.pc--footer  { padding-left: 20px; padding-right: 20px; margin-bottom: .2em; margin-top: auto; }
+.pc--cta  { color: #fff; background-color: #ED0722; border-color: #ED0722; display: inline-block; font-weight: normal; text-align: center; white-space: nowrap; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: .75em 0; font-size: 1rem; line-height: 1.25; transition: all .3s ease; width: 100%; text-decoration: none; border-radius: .3em; cursor: pointer; text-decoration: none; *display: inline; zoom: 1; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; -webkit-border-radius: .3em; -moz-border-radius: .3em; -ms-border-radius: .3em; -o-border-radius: .3em; }
+a.pc--cta:hover, a.pc--cta:focus  { color: #fff; background-color: #ad0000; border-color: #ad0000; text-decoration: none; }
+a.pc--cta:focus  { box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075),0 0 0 3px rgba(237,7,34,0.5); -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075),0 0 0 3px rgba(237,7,34,0.5); -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075),0 0 0 3px rgba(237,7,34,0.5); -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075),0 0 0 3px rgba(237,7,34,0.5); -o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075),0 0 0 3px rgba(237,7,34,0.5); }
+
+/* Tile Generic - Home + Arrow Tiles */
+.tile  { display: flex; flex-direction: column; padding: 0; box-shadow: 0 2px 10px 0 #E2E8EE; border-radius: 4px; border: 1px solid #eee; -webkit-box-shadow: 0 2px 10px 0 #E2E8EE; -moz-box-shadow: 0 2px 10px 0 #E2E8EE; -ms-box-shadow: 0 2px 10px 0 #E2E8EE; -o-box-shadow: 0 2px 10px 0 #E2E8EE; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; }
+    .tile:hover, .tile:focus  { transition: ease .25s; box-shadow: 0 2px 50px 0 #E2E8EE; -webkit-box-shadow: 0 2px 50px 0 #E2E8EE; -moz-box-shadow: 0 2px 50px 0 #E2E8EE; -ms-box-shadow: 0 2px 50px 0 #E2E8EE; -o-box-shadow: 0 2px 50px 0 #E2E8EE; }
+    .tile > *  { display: block; padding-right: 20px; padding-left: 20px; }
+    .tile > img, .tile picture > img  { object-fit: cover; width: 100%; height: auto; display: block; padding-right: 0; padding-left: 0; overflow: hidden; }
+    .tile picture  { display: block; padding-right: 0; padding-left: 0; overflow: hidden; border-top-right-radius: 4px; border-top-left-radius: 4px; max-height: 200px; -webkit-border-top-right-radius: 4px; -moz-border-top-right-radius: 4px; -ms-border-top-right-radius: 4px; -o-border-top-right-radius: 4px; -webkit-border-top-left-radius: 4px; -moz-border-top-left-radius: 4px; -ms-border-top-left-radius: 4px; -o-border-top-left-radius: 4px; }
+    .tile h3, .tile strong  { font-weight: 700; color: #333333; font-size: 1rem; line-height: 1.2rem; height: auto; margin: 25px 0 5px 0; }
+    .tile.generic h3 a  { color: #333333; display: block; }
+    .tile ul  { margin-left: 0; padding-left: 2.5em; }
+    .tile h5 + p  { margin-top: 0; }
+    .tile a:hover  { text-decoration: none; }
+    .tile p, .tile ul, .tile a  { font-size: 1rem; line-height: 1.3rem; margin-top: .2em; margin-bottom: .2em; }
+    .tile .bttn__arrow  { position: relative; min-height: 44px; min-width: 44px; padding: 0; margin: 0; }
+        .tile .bttn__arrow:after  { content: ""; display: block; position: absolute; left: 0; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-right-red-link.svg') no-repeat left center; background-size: 1.5em auto; min-height: 100%; width: 100%; transition: all .25s ease-in-out; -webkit-background-size: 1.5em auto; -moz-background-size: 1.5em auto; -ms-background-size: 1.5em auto; -o-background-size: 1.5em auto; }
+        .tile .bttn__arrow:hover:after, .tile .bttn__arrow:focus:after  { background-position-x: 0.6em; }
+
+
+/* Repossessions (SB Colombia Legacy Forms)
+**********************************/
+
+/* Search */
+#propertySearch form  { overflow: hidden; }
+#RepoSearchBox  { display: flex; flex-wrap: wrap; justify-content: space-between; padding: 30px 0; background: none; border: none; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; }
+#propertySearch label, #minPrice, #currentMin  { margin-left: 0; }
+#assetType, #cityLabel  { width: 48%; margin: 0 0 20px 0; background: none !important; }
+.expensesTitle  { display: flex; justify-content: space-between; width: 100%; }
+    .expensesTitle label  { width: 48%; }
+#currentMin, #currentMax  { width: 100%; }
+#propertySearch input.button  { position: relative; display: inline-block; padding: 15px 30px; color: #fff; font-size: 16px; font-weight: 700; line-height: 1.5em; background: #ED0722; border: 1px solid transparent; border-radius: 8px; box-sizing: border-box; box-shadow: none; cursor: pointer; *display: inline; zoom: 1; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; }
+    #propertySearch input.button:hover, #propertySearch input.button:focus  { color: #fff; text-decoration: none !important; background: #CB061D; }
+
+
+/* Search - Breadcrumb */
+.property__breadcrumb ol.breadcrumb  { margin-left: -15px; padding: 0px; list-style: none; }
+    .property__breadcrumb ol.breadcrumb li  { display: inline; font-size: inherit; }
+        /* Display list items side by side */
+        .property__breadcrumb ol.breadcrumb li + li:before  { padding: 8px; color: #000; content: "/\00a0"; }
+/* Add a slash symbol (/) before/behind each list item */
+.property__breadcrumb ol.breadcrumb  { margin-left: 0; }
+    .property__breadcrumb ol.breadcrumb li  { font-size: 1em; line-height: 1.2em; }
+
+
+/* Search Results - Listing */
+#results  { background-color: #fff; border: none; -webkit-box-shadow: none; margin-top: 20px; display: flex; flex-direction: column; }
+    #results .list  { position: relative; margin: 0 auto; padding: 20px 0; border-bottom: 1px solid #E2E8EE; overflow: hidden; }
+#propertySearch #results ul  { padding-bottom: 10px; margin: 0px 0 0px 250px; display: block; list-style: none; width: auto; }
+    #propertySearch #results ul li  { color: #333333 !important; }
+
+/* Contact Form */
+.contactForm fieldset  { margin: 0; padding: 60px 0; }
+    .contactForm fieldset label, .contactForm fieldset div.radio  { width: 47.5%; margin: 0 1% 20px 1%; text-align: left; }
+        .contactForm fieldset label span:first-of-type  { display: block; max-width: none; }
+        .contactForm fieldset label input:not([type='checkbox']):not([type='radio']), .contactForm fieldset label select  { width: 100%; }
+        .contactForm fieldset label .validation, .reposessionContactForm.contactForm .helpRequiredLabel .validation  { top: auto; bottom: 0.5em; right: -20px; }
+.contactForm textarea  { height: 6em; width: 100%; resize: both; }
+.contactForm fieldset label.checkbox  { margin-top: 0; margin-bottom: 60px; }
+.contactForm fieldset input[type='checkbox']  { margin-left: 0; }
+.contactForm div.captcha  { margin: 0; }
+    .contactForm div.captcha label  { text-align: right; }
+.reposessionContactForm.contactForm form > div:last-of-type  { margin: 0 0 60px 0; }
+    .reposessionContactForm.contactForm form > div:last-of-type input  { margin: 0; }
+.contactForm .button  { position: relative; display: inline-block; padding: 15px 30px; color: #fff; font-size: 16px; font-weight: 700; line-height: 1.5em; background: #ED0722; border: 1px solid transparent; border-radius: 8px; box-sizing: border-box; box-shadow: none; cursor: pointer; *display: inline; zoom: 1; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; }
+    .contactForm .button:hover, .contactForm .button:focus  { color: #fff; text-decoration: none !important; background: #CB061D; }
+.reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong  { overflow: hidden; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong input  { line-height: normal; }
+        .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong input[type="checkbox"]  { position: absolute; top: -2em; left: -2em; z-index: -1; }
+        .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong input:not([type="checkbox"]):not([type="radio"])  { display: block; width: 100%; line-height: 40px; padding: 2px 0 1px 0; font-weight: 400; background: transparent; border: none; border-bottom: 1px solid #757575; box-sizing: border-box; -webkit-appearance: none; }
+            .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong input:not([type="checkbox"]):not([type="radio"]):focus  { padding-bottom: 0; border-color: #8230DF; border-bottom-width: 2px; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"] ~ span:not(.validation)  { position: relative; display: inline-block; min-height: 28px; padding: 2px 0 0 2.5em; font-weight: 400; *display: inline; zoom: 1; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"]:focus ~ span:not(.validation)  { color: #8230DF; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"] ~ span:not(.validation):before  { content: ""; position: absolute; top: 0; left: 0; width: 26px; height: 26px; margin: 2px 0 0 2px; color: #ED0722; font-family: "Segoe UI Symbol"; font-size: 18px; line-height: 24px; text-align: center; vertical-align: bottom; background: #fff; border: 1px solid #757575; box-sizing: border-box; cursor: pointer; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"]:checked ~ span:not(.validation):before  { border-color: #8230DF; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"]:focus ~ span:not(.validation):before  { border-color: #8230DF; box-shadow: 0 0 0 2px #8230DF; -webkit-box-shadow: 0 0 0 2px #8230DF; -moz-box-shadow: 0 0 0 2px #8230DF; -ms-box-shadow: 0 0 0 2px #8230DF; -o-box-shadow: 0 0 0 2px #8230DF; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"] ~ span:not(.validation):before  { border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; -o-border-radius: 6px; }
+    .reposessionContactForm.contactForm fieldset label.checkbox.checkboxLong > [type="checkbox"]:checked ~ span:not(.validation):before  { content: ""; color: #fff; background: #8230DF; background-image: url("//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/icon-checkmark-white.svg"); background-repeat: no-repeat; background-position-x: center; background-position-y: center; background-size: inherit; width: 26px; height: 26px; margin: 2px 0 0 2px; border: 1px solid #757575; box-sizing: border-box; -webkit-background-size: inherit; -moz-background-size: inherit; -ms-background-size: inherit; -o-background-size: inherit; }
+
+
+/* Repossession Details - Lightbox */
+#lightBox .close  { content: ""; transform: rotate(0deg); z-index: 99; padding: 0px 2px; height: 18px; width: 18px; padding: 0; margin-right: .25em; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); }
+    #lightBox .close:after  { content: ""; padding: 0; background-color: none; border-radius: 0; color: #fff; transform: rotate(0deg); display: block; width: 100%; height: 100%; background: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/modal-exit-grey.svg') no-repeat center center; background-size: 18px 18px; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); -webkit-background-size: 18px 18px; -moz-background-size: 18px 18px; -ms-background-size: 18px 18px; -o-background-size: 18px 18px; }
+.lightBoxImage a  { border: 1px solid rgba(255,255,255,0); }
+    .lightBoxImage a:hover  { background-color: #fff; }
+.lightBoxImage .prev > img, .lightBoxImage .next > img  { display: none; }
+.lightBoxImage .prev  { position: absolute; }
+    .lightBoxImage .prev:before  { content: ""; display: block; height: 24px; width: 24px; background-image: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-right-dark.svg'); background-repeat: no-repeat; background-position-x: right; background-position-y: top; background-color: #fff; transform: rotate(0deg); box-sizing: border-box; margin-right: auto; margin-left: auto; transform: rotate(180deg); margin-left: 15px; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg); }
+.lightBoxImage .next  { position: absolute; }
+    .lightBoxImage .next:before  { content: ""; display: block; height: 24px; width: 24px; background-image: url('//scotiabankfiles.azureedge.net/scotiabank-colombia/Global-Rebrand/arrow-right-dark.svg'); background-repeat: no-repeat; background-position-x: right; background-position-y: top; background-color: #fff; transform: rotate(0deg); box-sizing: border-box; margin-right: auto; margin-left: auto; margin-right: 15px; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); }
+
+
+/* Search Results - Details */
+#propertyDetails  { float: none; }
+    #propertyDetails .featuredProperty  { background-color: #fff; margin: 20px 0; padding: 0; }
+    #propertyDetails #listingGallery  { margin-bottom: 30px; }
+
+
+
+/* Media Queries
+***************************************/
+@media (max-width: 1140px) {
+    .rotator .slide > div  { padding: 0 15px; }
+}
+
+@media (max-width: 1020px) {
+    html  { zoom: 0.75; }
+}

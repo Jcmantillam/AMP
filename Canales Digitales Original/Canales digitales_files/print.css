@@ -1,0 +1,50 @@
+@media print {
+    @import "Main.css";
+
+    html  { background-color: #fff; }
+
+    .mobile,
+    #siteHeader,
+    #siteContent h1.desktop,
+    #siteNav,
+    #sideMenu,
+    footer,
+    #siteFooter,
+    #siteTabs,
+    #legal,
+    .contactForm .captcha,
+    .contactForm .returnMessage,
+    #button,
+    .button,
+    #printButton,
+    .contactForm .termsAndConditions,
+    .ticker,
+    .validation  { display: none !important; }
+    body  { width: 750px !important; }
+    #siteContent > div > nav + div  { margin: 0; }
+    /*#siteContent > div  { border:none; padding:0; font-size:0.8em; }*/
+    /*#calculatedTable  { ; }
+    #printVehcile  { display: block; }*/
+    .calculatorModule .result table  { max-height: 75%; font-size: 1.2em; border: 1px solid #ccc; border-top: 3px solid #adada7; padding: 0; border-collapse: collapse; margin-top: 1.5em; max-width: 100%; margin-bottom: 1em; background-color: #FFF; color: #666; }
+        .calculatorModule .result table tbody  { padding: 0; }
+            .calculatorModule .result table tbody tr:nth-of-type(odd) td  { background-color: #f5f5f5; }
+        .calculatorModule .result table th  { font-size: 1.1em; text-align: left; padding: 0.5em; padding-left: 1em; border-width: 0 1px; border-style: solid; border-color: #ccc; border-bottom: 3px solid #ccc; max-width: 100%; }
+        .calculatorModule .result table td  { padding: 1em; border-width: 0 1px; border-style: solid; border-color: #ccc; }
+            .calculatorModule .result table td.headerRow  { font-size: 1.1em; font-weight: bold; border: 1px solid #ccc; border-top: 3px solid #ccc; }
+        .calculatorModule .result table td  { padding: 1em; border-width: 0 1px; border-style: solid; border-color: #ccc; }
+    .calculatorModule .result header > div:first-of-type  { background-color: #CC0000; font-weight: bold; padding-left: 5%; width: 106%; color: white; margin: 1% 0; margin-left: -5.5%; }
+
+    .consumerCreditCalculatorModule .printDate, .vehicleLoanCalculatorModule .printDate  { display: block; }
+
+    #smartbanner  { display: none; }
+
+    .fiduciariaSimulatorModule.calculatorModule > *  { display: none; background-color: #fff; }
+    .fiduciariaSimulatorModule.calculatorModule + span  { display: none; background-color: #fff; }
+    .fiduciariaSimulatorModule.calculatorModule .result  { display: block !important; }
+        .fiduciariaSimulatorModule.calculatorModule .result > div:nth-of-type(1)  { background: none; }
+        .fiduciariaSimulatorModule.calculatorModule .result div > div:nth-of-type(1)  { background: none; color: #666; }
+            .fiduciariaSimulatorModule.calculatorModule .result div > div:nth-of-type(1) span  { /*color: #d81e05; */; }
+        .fiduciariaSimulatorModule.calculatorModule .result div > .resultsFormatted > span  { color: #666 !important; }
+
+    .creditMortgageCalculatorAmortizationModule .result table  { font-size: 0.8em; }
+}
